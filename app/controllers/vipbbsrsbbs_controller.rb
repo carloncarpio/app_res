@@ -105,7 +105,7 @@ class VipbbsrsbbsController < ApplicationController
 
     @vipbbsrsbbs_with = Vipbbsrsbb.where(:status => true)
     @vipbbsrsbbs = Vipbbsrsbb.all.order("ticket_num")
-    @my_vipbbsrsbbs = Vipbbsrsbb.find_reserve(session[:company_name])order("ticket_num")
+    @my_vipbbsrsbbs = Vipbbsrsbb.find_reserve(session[:company_name]).order("ticket_num")
   end
 
   def update_status
