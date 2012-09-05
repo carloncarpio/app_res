@@ -1,0 +1,47 @@
+<br /><br /><br />
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ticket num:</b>
+  <%= @vipbbsrsbb.ticket_num %>
+</p>
+<p>
+  <b>Section:</b>
+  <%= @vipbbsrsbb.section %>
+</p>
+
+<p>
+  <b>Company name:</b>
+  <%= @vipbbsrsbb.company_name %>
+</p>
+
+<p>
+  <b>Company contact:</b>
+  <%= @vipbbsrsbb.company_contact %>
+</p>
+
+<p>
+  <b>Company email:</b>
+  <%= @vipbbsrsbb.company_email %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @vipbbsrsbb.flag %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @vipbbsrsbb.status %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @vipbbsrsbb.approved %>
+</p>
+
+
+<%= link_to 'Edit', edit_vipbbsrsbb_path(@vipbbsrsbb), :class => 'btn btn-primary' %>
+<%= link_to 'Back', vipbbsrsbbs_path, :class => 'btn btn-primary' %>
+</div>

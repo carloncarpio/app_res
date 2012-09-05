@@ -1,0 +1,41 @@
+<%= form_for(@lbdd) do |f| %>
+  <% if @lbdd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lbdd.errors.count, "error") %> prohibited this lbdd from being saved:</h2>
+
+      <ul>
+      <% @lbdd.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ticket_num %><br />
+    <%= f.text_field :ticket_num %>
+  </div>
+  <div class="field">
+    <%= f.label :company_name %><br />
+    <%= f.text_field :company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :company_contact %><br />
+    <%= f.text_field :company_contact %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :flag, :value => 0 %>
+    <%= f.hidden_field :status, :value => false %>
+    <%= f.hidden_field :price, :value => 00 %>
+    <%= f.hidden_field :approved, :value => 'false' %>
+    <%= f.hidden_field :paid, :value => 'no' %>
+    <%= f.hidden_field :main_section, :value => 'lb_dd' %>
+  </div>
+  <div class="field">
+    <%= f.label :section %><br />
+    <%= f.text_field :section %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

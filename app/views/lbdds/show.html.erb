@@ -1,0 +1,63 @@
+<br /><br /><br />
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ticket num:</b>
+  <%= @lbdd.ticket_num %>
+</p>
+
+<p>
+  <b>Company name:</b>
+  <%= @lbdd.company_name %>
+</p>
+
+<p>
+  <b>Company contact:</b>
+  <%= @lbdd.company_contact %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @lbdd.flag %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @lbdd.status %>
+</p>
+
+<p>
+  <b>Section:</b>
+  <%= @lbdd.section %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @lbdd.price %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @lbdd.approved %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%= @lbdd.paid %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @lbdd.user_id %>
+</p>
+
+<p>
+  <b>Main section:</b>
+  <%= @lbdd.main_section %>
+</p>
+
+
+<%= link_to 'Edit', edit_lbdd_path(@lbdd) %> |
+<%= link_to 'Back', lbdds_path %>
+</div>

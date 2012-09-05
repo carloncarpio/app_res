@@ -1,0 +1,54 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>LB / DD</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'A', {:controller => 'Lbdds',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'B', {:controller => 'Lbdds',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'C', {:controller => 'Lbdds',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'D', {:controller => 'Lbdds',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'E', {:controller => 'Lbdds',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'F', {:controller => 'Lbdds',:action => 'index_f'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'G', {:controller => 'Lbdds',:action => 'index_g'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'H', {:controller => 'Lbdds',:action => 'index_h'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'I', {:controller => 'Lbdds',:action => 'index_i'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Approved</th>
+    <th>Status</th>
+    <% if session[:username] == 'admin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+
+<% @lbdds.each do |lbdd| %>
+  <tr id='<%= dom_id lbdd %>'>
+    <td><%= lbdd.ticket_num %></td>
+    <td><%= lbdd.company_name %></td>
+    <td><%= lbdd.company_contact %></td>
+    <td><%= lbdd.company_email %></td>
+    <td><%= lbdd.approved %></td>
+    <td><%= lbdd.status %></td>
+    <% if session[:username] == 'admin' %>
+        <td><%= link_to 'Show', lbdd %></td>
+        <td><%= link_to 'Edit', edit_lbdd_path(lbdd) %></td>
+        <td><%= link_to 'Destroy', lbdd, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if session[:username] == 'admin' %>
+    <%= link_to 'New Reservation', {:action => 'new'} ,:class => 'btn btn-primary' %>
+<% end %>
+<%= link_to 'View', {:controller => 'Lbdds', :action => 'visual'},:class => 'btn btn-primary' %>
+</div>

@@ -1,0 +1,37 @@
+//a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+a{color:#666;}
+
+table#visual_vipbbsrsbb,table#visual_lbdd{margin:20px 0;}
+table#visual_vipbbsrsbb td{border: 1px solid #000;//background-color: red;text-align: center;}
+.false, .true {border: 1px solid #000;text-align: center;width:20px;}
+//.false{background-color: red;color:blue;}
+.true{background-color: green;color:white;}
+table a{text-decoration: none; color:#000;font-size: .6em;width: 20px;}
+table a:hover{color:#000;}
+
+.body_content{margin:100px 0 0 0;position:relative;}
+
+.inner_content{width: 50%; margin:0 auto;}
+.inner_content h1{//text-align: center;margin:150px 0 20px 0;}
+.inner_content .span3{margin:0 auto;}
+
+#signup{float:right;color: #fff;background-color: #fff;border-radius: 2px;padding: 3px 10px;margin-top: 8px;}
+
+.welcome{float:right;margin-top:10px;}
+
+#my_reserve{position: absolute;right:0;top:100px;width:400px;}
+
+.nav-in{position: absolute;right:0;top:5px;}
+ul{position: absolute;}
+ul li{float: left;margin:0 10px 0 0;list-style-type: none;}
+
+.container{margin-bottom: 50px;}
