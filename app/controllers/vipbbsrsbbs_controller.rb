@@ -97,7 +97,7 @@ class VipbbsrsbbsController < ApplicationController
   end
 
   def visual
-    @vipbbsrsbbs_a = Vipbbsrsbb.find_section('A')
+    @vipbbsrsbbs_a = Vipbbsrsbb.find_section('A').order("ticket_num")
     @vipbbsrsbbs_b = Vipbbsrsbb.find_section('B')
     @vipbbsrsbbs_c = Vipbbsrsbb.find_section('C')
     @vipbbsrsbbs_d = Vipbbsrsbb.find_section('D')
