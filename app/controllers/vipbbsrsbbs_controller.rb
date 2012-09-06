@@ -100,9 +100,9 @@ class VipbbsrsbbsController < ApplicationController
   def visual
     @vipbbsrsbbs_a = Vipbbsrsbb.find_section('A').order("id")
     @vipbbsrsbbs_b = Vipbbsrsbb.find_section('B').order("id")
-    @vipbbsrsbbs_c = Vipbbsrsbb.find_section('C').order("ticket_num")
-    @vipbbsrsbbs_d = Vipbbsrsbb.find_section('D').order("ticket_num")
-    @vipbbsrsbbs_e = Vipbbsrsbb.find_section('E').order("ticket_num")
+    @vipbbsrsbbs_c = Vipbbsrsbb.find_section('C').order("id")
+    @vipbbsrsbbs_d = Vipbbsrsbb.find_section('D').order("id")
+    @vipbbsrsbbs_e = Vipbbsrsbb.find_section('E').order("id")
 
     @vipbbsrsbbs_with = Vipbbsrsbb.where(:status => true)
     @vipbbsrsbbs = Vipbbsrsbb.all
