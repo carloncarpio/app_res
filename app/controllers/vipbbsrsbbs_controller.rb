@@ -58,7 +58,8 @@ class VipbbsrsbbsController < ApplicationController
 
     respond_to do |format|
       if @vipbbsrsbb.save
-        format.html { redirect_to @vipbbsrsbb, notice: 'Vipbbsrsbb was successfully created.' }
+        format.html { redirect_to :action => 'index' }
+        #format.html { redirect_to @vipbbsrsbb, notice: 'Vipbbsrsbb was successfully created.' }
         format.json { render json: @vipbbsrsbb, status: :created, location: @vipbbsrsbb }
       else
         format.html { render action: "new" }

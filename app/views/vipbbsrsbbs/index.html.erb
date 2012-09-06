@@ -44,4 +44,23 @@
     <%= link_to 'New Reservation', {:action => 'new'} ,:class => 'btn btn-primary' %>
 <% end %>
 <%= link_to 'View', {:controller => 'Vipbbsrsbbs', :action => 'visual'},:class => 'btn btn-primary' %>
+
+
+<%= form_for(Vipbbsrsbb.new) do |f| %>
+ 
+  <div class="field">
+    <br /><br /><br />
+    <h4>Add Ticket</h4>
+    <%= f.label :ticket_num %>
+    <%= f.text_field :ticket_num %>
+  
+    <%= f.label :section %>
+    <%= f.text_field :section %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit('Create Seat') %>
+  </div>
+<% end %>
+
 </div>
