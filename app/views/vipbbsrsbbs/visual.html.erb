@@ -7,6 +7,10 @@
 			<% @vipbbsrsbbs_a.each do |vipbbsrsbb_a| %>
 				<% if vipbbsrsbb_a.approved == 'yes' %>
 					<td class="<%= vipbbsrsbb_a.status %>"><a><%= vipbbsrsbb_a.ticket_num %></a></td>
+				<% elsif vipbbsrsbb_a.ticket_num == 'A6' %>
+					<td style="width:20px;"></td>
+				<% elsif vipbbsrsbb_a.ticket_num == 'A12' %>
+					<td style="width:20px;"></td>
 				<% else %>
 				<td id='<%= dom_id vipbbsrsbb_a %>' class="<%= vipbbsrsbb_a.status %>">
 					<% if vipbbsrsbb_a.status == false %>
@@ -24,6 +28,10 @@
 			<% @vipbbsrsbbs_b.each do |vipbbsrsbb_b| %>
 				<% if vipbbsrsbb_b.approved == 'yes' %>
 					<td class="<%= vipbbsrsbb_b.status %>"><a><%= vipbbsrsbb_b.ticket_num %></a></td>
+				<% elsif vipbbsrsbb_b.ticket_num == 'B6' %>
+					<td style="width:20px;"></td>
+				<% elsif vipbbsrsbb_b.ticket_num == 'B12' %>
+					<td style="width:20px;"></td>
 				<% else %>
 				<td id='<%= dom_id vipbbsrsbb_b %>' class="<%= vipbbsrsbb_b.status %>">
 					<% if vipbbsrsbb_b.status == false %>
@@ -89,7 +97,7 @@
 			<% end %>
 		</tr>
 	</table>
-
+	<%= link_to 'Main Page', { :controllre => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
 
 	</div><!-- body_content -->
@@ -119,6 +127,7 @@
 					 <% else %>
 					 	<td><%= link_to('DisApproved', :action => 'disapproved', :id => my.id) %></td>
 					 <% end %>
+					 
 				</tr>
 			<% end %>
 			</table>

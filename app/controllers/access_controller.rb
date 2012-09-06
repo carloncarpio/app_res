@@ -15,7 +15,12 @@ class AccessController < ApplicationController
   		session[:company_name] = authorize_user.company_name
   		session[:company_email] = authorize_user.company_email
   		session[:company_contact] = authorize_user.company_contact
-  		redirect_to(:controller => 'Vipbbsrsbbs', :action => 'visual')
+  		#redirect_to(:controller => 'Vipbbsrsbbs', :action => 'visual')
+      if authorize_user.username == 'admin'
+        redirect_to :action => 'admin'
+      else
+        redirect_to :action => 'public'
+      end
   	else
       flash[:notice] = 'Invalid Username/Password'
   		redirect_to(:action => 'index')
@@ -33,4 +38,11 @@ class AccessController < ApplicationController
     session[:company_contact] = nil
     redirect_to :controller => 'access', :action => 'index'
   end
+
+  def public
+  end
+
+  def admin
+  end
+
 end

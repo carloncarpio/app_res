@@ -35,3 +35,7 @@ ul{position: absolute;}
 ul li{float: left;margin:0 10px 0 0;list-style-type: none;}
 
 .container{margin-bottom: 50px;}
+
+.seat_nav{//position:absolute;right: 0;top:0;float:right;margin-right: 420px;margin-top: 50px;}
+//.seat_nav ul {float:right;display:inline;}
+//.seat_nav ul li a{float:right;display: block;}

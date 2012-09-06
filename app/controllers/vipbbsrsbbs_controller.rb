@@ -97,14 +97,14 @@ class VipbbsrsbbsController < ApplicationController
   end
 
   def visual
-    @vipbbsrsbbs_a = Vipbbsrsbb.find_section('A').order("ticket_num")
-    @vipbbsrsbbs_b = Vipbbsrsbb.find_section('B').order("ticket_num")
+    @vipbbsrsbbs_a = Vipbbsrsbb.find_section('A').order("id")
+    @vipbbsrsbbs_b = Vipbbsrsbb.find_section('B').order("id")
     @vipbbsrsbbs_c = Vipbbsrsbb.find_section('C').order("ticket_num")
     @vipbbsrsbbs_d = Vipbbsrsbb.find_section('D').order("ticket_num")
     @vipbbsrsbbs_e = Vipbbsrsbb.find_section('E').order("ticket_num")
 
     @vipbbsrsbbs_with = Vipbbsrsbb.where(:status => true)
-    @vipbbsrsbbs = Vipbbsrsbb.all.order("ticket_num")
+    @vipbbsrsbbs = Vipbbsrsbb.all
     @my_vipbbsrsbbs = Vipbbsrsbb.find_reserve(session[:company_name]).order("ticket_num")
   end
 

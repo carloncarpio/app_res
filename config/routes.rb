@@ -10,6 +10,7 @@ Reservation::Application.routes.draw do
   resources :vipbbsrsbbs
 
   match 'signup' => 'users#new'
+  match 'public' => 'access#public'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
