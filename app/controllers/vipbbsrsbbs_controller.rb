@@ -12,16 +12,16 @@ class VipbbsrsbbsController < ApplicationController
   end
 
   def index_b
-    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'B')
+    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'B').order("id")
   end
   def index_c
-    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'C')
+    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'C').order("id")
   end
   def index_d
-    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'D')
+    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'D').order("id")
   end
   def index_e
-    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'E')
+    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'E').order("id")
   end
 
   # GET /vipbbsrsbbs/1
