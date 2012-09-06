@@ -3,7 +3,7 @@ class VipbbsrsbbsController < ApplicationController
   # GET /vipbbsrsbbs.json
   def index
     @vipbbsrsbbs = Vipbbsrsbb.all
-    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'A')
+    @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'A').order("id")
 
     respond_to do |format|
       format.html # index.html.erb
