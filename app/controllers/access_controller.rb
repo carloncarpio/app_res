@@ -17,7 +17,7 @@ class AccessController < ApplicationController
   		session[:company_contact] = authorize_user.company_contact
   		#redirect_to(:controller => 'Vipbbsrsbbs', :action => 'visual')
       if authorize_user.username == 'admin'
-        redirect_to :action => 'admin'
+        redirect_to :action => 'public'
       else
         redirect_to :action => 'public'
       end
@@ -40,6 +40,8 @@ class AccessController < ApplicationController
   end
 
   def public
+    @vipbbsrsbbs_all = Vipbbsrsbb.all
+    @vipbbsrsbbs = Vipbbsrsbb.where(:status => true)
   end
 
   def admin

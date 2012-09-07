@@ -17,16 +17,24 @@
   <b>Company Email:</b>
   <%= @user.company_email %>
 </p>
-
+<hr />
 <div>
-	<p>Reservations</p>
-	<p>
-		<% @reserves.each do |my| %>
-			<%= my.ticket_num %> - <%= my.main_section %><br />
-		<% end %>
-	</p>
+	<p>Reservations - (<%= @reserves.size %>)</p>
+	<table class="table table-striped">
+	  <tr>
+	    <th>Ticket Number</th>
+	    <th>Section</th>
+	   
+	  </tr>
+	<% @reserves.each do |my| %>
+	  <tr>
+	    <td><%= my.ticket_num %></td>
+	    <td><%= my.main_section %></td>
+	  </tr>
+<% end %>
+</table>
 </div>
 
-
+<%= link_to 'Submit Email', {:action => 'send_reserve', :id => @user.id}, :class => 'btn btn-primary' %>
 <%= link_to 'Back', {:action => 'visual'}, :class => 'btn btn-primary' %>
 </div>

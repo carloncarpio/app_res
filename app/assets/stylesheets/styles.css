@@ -17,7 +17,7 @@ table#visual_vipbbsrsbb td{border: 1px solid #000;//background-color: red;text-a
 .true{background-color: green;color:white;}
 table a{text-decoration: none; color:#000;font-size: .6em;width: 20px;}
 table a:hover{color:#000;}
-
+//table a .table{text-decoration: none; color:#000;font-size: .6em;width: 20px;}
 .body_content{margin:100px 0 0 0;position:relative;}
 
 .inner_content{width: 50%; margin:0 auto;}

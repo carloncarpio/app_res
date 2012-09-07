@@ -9,11 +9,25 @@ class UserMailer < ActionMailer::Base
   	mail(:to => user.company_email, :subject => 'Registered')
   end
 
+  #def send_mail(email,company_name)
+  #	@company_email = email
+  #	@company_name = company_name
+  #	@tickets = Vipbbsrsbb.where(:company_name => @company_name)
+  #	mail(:to => @company_email, :subject => 'Test')
+  #end
+
   def send_mail(email,company_name)
-  	@company_email = email
-  	@company_name = company_name
-  	@tickets = Vipbbsrsbb.where(:company_name => @company_name)
-  	mail(:to => @company_email, :subject => 'Test')
+    @company_email = email
+    @company_name = company_name
+    @tickets = Vipbbsrsbb.where(:company_name => @company_name)
+    mail(:to => @company_email, :subject => 'Test')
+  end
+
+  def send_reserves(email,company_name)
+    @company_email = email
+    @company_name = company_name
+    @tickets = Vipbbsrsbb.where(:company_name => @company_name)
+    mail(:to => @company_email, :subject => 'Test')
   end
 
 end

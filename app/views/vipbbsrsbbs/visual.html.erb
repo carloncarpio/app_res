@@ -2,7 +2,7 @@
 	<div class="body_content">	
 	<h3>Section VIP BB / SRS BB</h3>
 
-	<table id="visual_vipbbsrsbb">
+	<table id="visual_vipbbsrsbb" >
 		<tr>
 			<% @vipbbsrsbbs_a.each do |vipbbsrsbb_a| %>
 				<% if vipbbsrsbb_a.approved == 'yes' %>
@@ -97,7 +97,7 @@
 			<% end %>
 		</tr>
 	</table>
-	<%= link_to 'Main Page', { :controllre => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
 
 	</div><!-- body_content -->
@@ -115,11 +115,11 @@
 			<% @vipbbsrsbbs_with.each do |my| %>
 				<tr id='<%= dom_id my %>'>
 					<td><%= my.ticket_num %></td>
-					<td><%= link_to(my.company_name, :action => 'show_comp', :id => my.user_id) %></td>
-					<td><% if my.paid == '' %>
-						<%= link_to('No') %>
+					<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
+					<td><% if my.paid == 'no' %>
+						<%= link_to('No',{:action => 'paid', :id => my.id}) %>
 						<% else %>
-						<%= link_to('Yes') %>	
+						<%= link_to('Yes',{:action => 'unpaid', :id => my.id}) %>	
 						<% end %>
 					</td>
 					<% if my.approved == 'no' %>

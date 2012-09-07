@@ -1,0 +1,40 @@
+<br /><br /><br /><br />
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Company Name:</b>
+  <%= @user.company_name %>
+</p>
+
+<p>
+  <b>Company Contact:</b>
+  <%= @user.company_contact %>
+</p>
+
+<p>
+  <b>Company Email:</b>
+  <%= @user.company_email %>
+</p>
+<hr />
+<div>
+	<p>Reservations - (<%= @reserves.size %>)</p>
+	<table class="table table-striped">
+	  <tr>
+	    <th>Ticket Number</th>
+	    <th>Section</th>
+	   
+	  </tr>
+	<% @reserves.each do |my| %>
+	  <tr>
+	    <td><%= my.ticket_num %></td>
+	    <td><%= my.main_section %></td>
+	  </tr>
+<% end %>
+</table>
+</div>
+
+<%= link_to 'Submit Email', {:action => 'send_reserve', :id => @user.id}, :class => 'btn btn-primary' %>
+<%= link_to 'Back', {:action => 'visual'}, :class => 'btn btn-primary' %>
+</div>

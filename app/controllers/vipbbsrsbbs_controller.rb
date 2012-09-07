@@ -22,6 +22,7 @@ class VipbbsrsbbsController < ApplicationController
   end
   def index_e
     @vipbbsrsbbs = Vipbbsrsbb.where(:section => 'E').order("id")
+    #@vipbbsrsbbs = Vipbbsrsbb.all
   end
 
   # GET /vipbbsrsbbs/1
@@ -106,12 +107,13 @@ class VipbbsrsbbsController < ApplicationController
 
     @vipbbsrsbbs_with = Vipbbsrsbb.where(:status => true)
     @vipbbsrsbbs = Vipbbsrsbb.all
-    @my_vipbbsrsbbs = Vipbbsrsbb.find_reserve(session[:company_name]).order("ticket_num")
+    @my_vipbbsrsbbs = Vipbbsrsbb.find_reserve(session[:company_name]).order("id")
   end
 
   def update_status
      @vipbbsrsbb = Vipbbsrsbb.find(params[:id])
-
+     @vipbbsrsbb.update_attribute :approved, 'no'
+     @vipbbsrsbb.update_attribute :paid, 'no'
      respond_to do |format|
       if @vipbbsrsbb.status == false
         if @vipbbsrsbb.update_attribute :status, true
@@ -162,7 +164,7 @@ class VipbbsrsbbsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to :action => 'visual' }
-      UserMailer.send_mail(@vipbbsrsbb.company_email,@vipbbsrsbb.company_name).deliver
+      #UserMailer.send_mail(@vipbbsrsbb.company_email,@vipbbsrsbb.company_name).deliver
       #format.json { head :no_content }
       #format.js 
     end
@@ -179,13 +181,28 @@ class VipbbsrsbbsController < ApplicationController
     end
   end
 
-  def show_comp
-    @user = User.find(params[:id])
-    @reserves = Vipbbsrsbb.where(:company_name => @user.company_name)
+  def paid
+     @vipbbsrsbb = Vipbbsrsbb.find(params[:id])
+     @vipbbsrsbb.update_attribute :paid, 'yes'
+
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
+      format.html { redirect_to :action => 'visual' }
+      #format.json { head :no_content }
+      #format.js 
+    end  
   end
+
+  def unpaid
+    @vipbbsrsbb = Vipbbsrsbb.find(params[:id])
+     @vipbbsrsbb.update_attribute :paid, 'no'
+
+    respond_to do |format|
+      format.html { redirect_to :action => 'visual' }
+      #format.json { head :no_content }
+      #format.js 
+    end  
+  end
+
+  
 
 end

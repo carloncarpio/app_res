@@ -34,15 +34,11 @@
   </div>
   <div class="field">
     <%= f.hidden_field :flag, :value => 0 %>
-    <%= f.select :status, options_for_select([ "false", "true" ]) %>
+    <%= f.hidden_field :paid, :value => 'no' %>
   </div>
-  <div class="field">
-    <%= f.label :approved %><br />
-    <%= f.text_field :approved %>
-  </div>
-
 
   <div class="actions">
     <%= f.submit('Create Seat') %>
   </div>
 <% end %>
+<!--options_for_select([ "false", "true" ])-->

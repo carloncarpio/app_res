@@ -40,8 +40,6 @@
 </table>
 
 <br />
-<% if session[:username] == 'admin' %>
-    <%= link_to 'New Reservation', new_vipbbsrsbb_path,:class => 'btn btn-primary' %>
-<% end %>
+
 <%= link_to 'View', {:controller => 'Vipbbsrsbbs', :action => 'visual'},:class => 'btn btn-primary' %>
 </div>

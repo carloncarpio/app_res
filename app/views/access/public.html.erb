@@ -3,7 +3,7 @@
 <%= image_tag('seatmap.jpg') %>
 <div class="seat_nav">
 	<ul>
-		<p><%= link_to('VIP-BB/SRS-BB',{:controller => 'Vipbbsrsbbs',:action => 'visual'}) %></p>
+		<p><%= link_to('VIP-BB/SRS-BB',{:controller => 'Vipbbsrsbbs',:action => 'visual'}) %> - <b><u><%= @vipbbsrsbbs.size %></u></b> / <%= @vipbbsrsbbs_all.size - 4 %> total seats</p>
 		<p><%= link_to('SRS-AA/VIP-AA',{:controller => 'Vipbbsrsbbs',:action => 'visual'}) %></p>
 		<p><%= link_to('SRS-AA',{:controller => 'Vipbbsrsbbs',:action => 'visual'}) %></p>
 		<p><%= link_to('CS-AA',{:controller => 'Vipbbsrsbbs',:action => 'visual'}) %></p>

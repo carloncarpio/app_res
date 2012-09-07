@@ -1,7 +1,6 @@
-<p><b><%= @company_name %></b>,</p>
+<%= @company_name %>,
 
-<p>Your Company has <%= @tickets.size %> reservations</p>
-
+Here is the list of your Company's Reservation:
 <% @tickets.each do |ticket| %>
 	<p><%= ticket.ticket_num %> - <%= ticket.main_section %></p>
 <% end %>

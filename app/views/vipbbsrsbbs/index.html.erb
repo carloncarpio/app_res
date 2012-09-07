@@ -16,6 +16,7 @@
     <th>Company Name</th>
     <th>Contact</th>
     <th>Email</th>
+    <th>Paid</th>
     <th>Approved</th>
     <% if session[:username] == 'admin' %>
         <th></th>
@@ -29,6 +30,12 @@
     <td><%= vipbbsrsbb.company_name %></td>
     <td><%= vipbbsrsbb.company_contact %></td>
     <td><%= vipbbsrsbb.company_email %></td>
+    <% if vipbbsrsbb.paid == 'no' && vipbbsrsbb.status == false %>
+        <td></td>
+    <% else %>
+        <td><%= vipbbsrsbb.paid %></td>
+    <% end %>
+        
     <td><%= vipbbsrsbb.approved %></td>
     <% if session[:username] == 'admin' %>
         <td><%= link_to 'Show', vipbbsrsbb %></td>
@@ -40,27 +47,26 @@
 </table>
 
 <br />
-<% if session[:username] == 'admin' %>
-    <%= link_to 'New Reservation', {:action => 'new'} ,:class => 'btn btn-primary' %>
-<% end %>
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 <%= link_to 'View', {:controller => 'Vipbbsrsbbs', :action => 'visual'},:class => 'btn btn-primary' %>
 
-
-<%= form_for(Vipbbsrsbb.new) do |f| %>
- 
-  <div class="field">
-    <br /><br /><br />
-    <h4>Add Ticket</h4>
-    <%= f.label :ticket_num %>
-    <%= f.text_field :ticket_num %>
-  
-    <%= f.label :section %>
-    <%= f.text_field :section %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit('Create Seat') %>
-  </div>
+<% if session[:username] == 'admin' %>
+    <%= form_for(Vipbbsrsbb.new) do |f| %>
+     
+      <div class="field">
+        <br /><br /><br />
+        <h4>Add Seats</h4><br />
+        <%= f.label :ticket_num %>
+        <%= f.text_field :ticket_num %>
+      
+        <%= f.label :section %>
+        <%= f.text_field :section %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit('Create Seat') %>
+      </div>
+    
+    <% end %>
 <% end %>
-
 </div>

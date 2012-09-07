@@ -1,4 +1,6 @@
 Reservation::Application.routes.draw do
+  get "company/show_comp"
+
   resources :lbdds
 
   get "access/login"

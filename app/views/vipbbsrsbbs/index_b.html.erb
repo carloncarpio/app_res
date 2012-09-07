@@ -29,7 +29,7 @@
     <td><%= vipbbsrsbb.company_name %></td>
     <td><%= vipbbsrsbb.company_contact %></td>
     <td><%= vipbbsrsbb.company_email %></td>
-    <td><%= vipbbsrsbb.status %></td>
+    <td><%= vipbbsrsbb.approved %></td>
     <% if session[:username] == 'admin' %>
         <td><%= link_to 'Show', vipbbsrsbb %></td>
         <td><%= link_to 'Edit', edit_vipbbsrsbb_path(vipbbsrsbb) %></td>
@@ -40,8 +40,6 @@
 </table>
 
 <br />
-<% if session[:username] == 'admin' %>
-    <%= link_to 'New Reservation', new_vipbbsrsbb_path,:class => 'btn btn-primary' %>
-<% end %>
+
 <%= link_to 'View', {:controller => 'Vipbbsrsbbs', :action => 'visual'},:class => 'btn btn-primary' %>
 </div>
