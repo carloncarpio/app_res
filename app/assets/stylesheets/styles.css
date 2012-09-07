@@ -11,7 +11,8 @@
 a{color:#666;}
 
 table#visual_vipbbsrsbb,table#visual_lbdd{margin:20px 0;}
-table#visual_vipbbsrsbb td{border: 1px solid #000;//background-color: red;text-align: center;}
+
+table#visual_vipbbsrsbb td,table#visual_lbdd td{border: 1px solid #000;//background-color: red;text-align: center;width:20px;}
 .false, .true {border: 1px solid #000;text-align: center;width:20px;}
 //.false{background-color: red;color:blue;}
 .true{background-color: green;color:white;}

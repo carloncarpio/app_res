@@ -11,14 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904060406) do
+ActiveRecord::Schema.define(:version => 20120907081327) do
 
   create_table "lbdds", :force => true do |t|
     t.string   "ticket_num"
     t.string   "company_name"
     t.string   "company_contact"
     t.integer  "flag"
-    t.string   "status"
     t.string   "section"
     t.integer  "price"
     t.string   "approved"
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20120904060406) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "company_email"
+    t.boolean  "status"
   end
 
   add_index "lbdds", ["user_id"], :name => "index_lbdds_on_user_id"

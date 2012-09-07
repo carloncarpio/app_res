@@ -20,23 +20,29 @@
     <th>Company Name</th>
     <th>Contact</th>
     <th>Email</th>
-    <th>Approved</th>
     <th>Status</th>
+    <th>Paid</th>
+    <th>Approved</th>
     <% if session[:username] == 'admin' %>
         <th></th>
         <th></th>
         <th></th>
     <% end %>   
   </tr>
-
 <% @lbdds.each do |lbdd| %>
   <tr id='<%= dom_id lbdd %>'>
     <td><%= lbdd.ticket_num %></td>
     <td><%= lbdd.company_name %></td>
     <td><%= lbdd.company_contact %></td>
     <td><%= lbdd.company_email %></td>
+    <td><%= lbdd.status %></td> 
+    <% if lbdd.paid == 'no' && lbdd.status == false %>
+        <td></td>
+    <% else %>
+        <td><%= lbdd.paid %></td>
+    <% end %>
+        
     <td><%= lbdd.approved %></td>
-    <td><%= lbdd.status %></td>
     <% if session[:username] == 'admin' %>
         <td><%= link_to 'Show', lbdd %></td>
         <td><%= link_to 'Edit', edit_lbdd_path(lbdd) %></td>
@@ -47,8 +53,29 @@
 </table>
 
 <br />
-<% if session[:username] == 'admin' %>
-    <%= link_to 'New Reservation', {:action => 'new'} ,:class => 'btn btn-primary' %>
-<% end %>
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 <%= link_to 'View', {:controller => 'Lbdds', :action => 'visual'},:class => 'btn btn-primary' %>
+
+<% if session[:username] == 'admin' %>
+    <%= form_for(Lbdd.new) do |f| %>
+     
+      <div class="field">
+        <br /><br /><br />
+        <h4>Add Seats</h4><br />
+        <%= f.label :ticket_num %>
+        <%= f.text_field :ticket_num %>
+      
+        <%= f.label :section %>
+        <%= f.text_field :section %>
+        <%= f.hidden_field :status, :value => false %>
+        <%= f.hidden_field :approved, :value => 'no' %>
+        <%= f.hidden_field :paid, :value => 'no' %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit('Create Seat') %>
+      </div>
+    
+    <% end %>
+<% end %>
 </div>
