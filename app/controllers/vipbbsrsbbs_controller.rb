@@ -105,7 +105,7 @@ class VipbbsrsbbsController < ApplicationController
     @vipbbsrsbbs_d = Vipbbsrsbb.find_section('D').order("id")
     @vipbbsrsbbs_e = Vipbbsrsbb.find_section('E').order("id")
 
-    @vipbbsrsbbs_with = Vipbbsrsbb.where(:status => true)
+    @vipbbsrsbbs_with = Vipbbsrsbb.where(:status => true).order("id")
     @vipbbsrsbbs = Vipbbsrsbb.all
     @my_vipbbsrsbbs = Vipbbsrsbb.find_reserve(session[:company_name]).order("id")
 
