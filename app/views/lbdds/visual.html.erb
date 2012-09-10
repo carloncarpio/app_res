@@ -16,6 +16,7 @@
 					<%= link_to lbdd_a.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_a.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_a.ticket_num %>
+<<<<<<< HEAD
 					<% end %>
 				<% end %>
 			<% end %>		
@@ -34,10 +35,13 @@
 					<%= link_to lbdd_b.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_b.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_b.ticket_num %>
+=======
+>>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
 					<% end %>
 				<% end %>
 			<% end %>		
 		</tr>
+<<<<<<< HEAD
 
 		<tr>
 			<% @lbdds_c.each do |lbdd_c| %>
@@ -165,6 +169,9 @@
 			<% end %>		
 		</tr>
 
+=======
+		
+>>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
 	</table>
 
 	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
@@ -186,8 +193,13 @@
 				<tr id='<%= dom_id my %>'>
 					<td><%= my.ticket_num %></td>
 					<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
+<<<<<<< HEAD
 					<td><% if my.paid == 'no' %>
 						<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => my.id}) %>
+=======
+					<td><% if my.paid == '' %>
+						<%= link_to('No') %>
+>>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
 						<% else %>
 						<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => my.id}) %>	
 						<% end %>

@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120909034330) do
 
   create_table "csaas", :force => true do |t|
@@ -114,6 +115,9 @@ ActiveRecord::Schema.define(:version => 20120909034330) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+=======
+ActiveRecord::Schema.define(:version => 20120907081327) do
+>>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
 
   create_table "lbdds", :force => true do |t|
     t.string   "ticket_num"

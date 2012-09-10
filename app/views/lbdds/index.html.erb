@@ -23,7 +23,11 @@
     <th>Status</th>
     <th>Paid</th>
     <th>Approved</th>
+<<<<<<< HEAD
     <% if session[:username] == 'superadmin' %>
+=======
+    <% if session[:username] == 'admin' %>
+>>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
         <th></th>
         <th></th>
         <th></th>
@@ -36,6 +40,7 @@
     <td><%= lbdd.company_contact %></td>
     <td><%= lbdd.company_email %></td>
     <td><%= lbdd.status %></td> 
+<<<<<<< HEAD
     <% if lbdd.paid == 'no' %>
         <td><%= image_tag('cross.png') %></td>
     <% else %>
@@ -48,6 +53,16 @@
         <td><%= image_tag('check.png') %></td>
     <% end %>
     <% if session[:username] == 'superadmin' %>
+=======
+    <% if lbdd.paid == 'no' && lbdd.status == false %>
+        <td></td>
+    <% else %>
+        <td><%= lbdd.paid %></td>
+    <% end %>
+        
+    <td><%= lbdd.approved %></td>
+    <% if session[:username] == 'admin' %>
+>>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
         <td><%= link_to 'Show', lbdd %></td>
         <td><%= link_to 'Edit', edit_lbdd_path(lbdd) %></td>
         <td><%= link_to 'Destroy', lbdd, confirm: 'Are you sure?', method: :delete, remote: true %></td>
@@ -71,7 +86,11 @@
       
         <%= f.label :section %>
         <%= f.text_field :section %>
+<<<<<<< HEAD
         <%= f.hidden_field :status, :value => false %>
+=======
+        <%= f.hidden_field :status, :value => 'false' %>
+>>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
         <%= f.hidden_field :approved, :value => 'no' %>
         <%= f.hidden_field :paid, :value => 'no' %>
       </div>

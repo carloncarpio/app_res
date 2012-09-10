@@ -10,6 +10,7 @@
 }
 a{color:#666;}
 
+<<<<<<< HEAD
 table#visual_vipbbsrsbb,table#visual_lbdd,
 table#visual_srsaavipaa,table#visual_lbcc,
 table#visual_srsaa,table#visual_csaa,
@@ -23,6 +24,11 @@ table#visual_srsaa td,table#visual_csaa td,
 table#visual_csa td,table#visual_srsa td,
 table#visual_vipasrsa td,table#visual_srsbvipb td,table#visual_lbaa td,
 table#visual_lbbb td,table#visual_lba td{border: 1px solid #000;//background-color: red;text-align: center;width:20px;}
+=======
+table#visual_vipbbsrsbb,table#visual_lbdd{margin:20px 0;}
+
+table#visual_vipbbsrsbb td,table#visual_lbdd td{border: 1px solid #000;//background-color: red;text-align: center;width:20px;}
+>>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
 .false, .true {border: 1px solid #000;text-align: center;width:20px;}
 //.false{background-color: red;color:blue;}
 .true{background-color: green;color:white;}
