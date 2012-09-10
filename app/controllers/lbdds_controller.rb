@@ -112,7 +112,7 @@ class LbddsController < ApplicationController
 
   def visual
     @lbdds_a = Lbdd.find_section('A').order("id")
-<<<<<<< HEAD
+
     @lbdds_b = Lbdd.find_section('B').order("id")
     @lbdds_c = Lbdd.find_section('C').order("id")
     @lbdds_d = Lbdd.find_section('D').order("id")
@@ -121,18 +121,18 @@ class LbddsController < ApplicationController
     @lbdds_g = Lbdd.find_section('G').order("id")
     @lbdds_h = Lbdd.find_section('H').order("id")
     @lbdds_i = Lbdd.find_section('I').order("id")
-=======
->>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
+
+
 
     @lbdds_with = Lbdd.where(:status => true)
     @lbdds = Lbdd.all
     @my_lbdds = Lbdd.find_reserve(session[:company_name]).order("id")
-<<<<<<< HEAD
+
 
     @lbdds_total = Lbdd.total_approved('yes').size
     @lbdds_pending = Lbdd.total_pending('no',true).size
-=======
->>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
+
+
   end
 
   def update_status
@@ -219,11 +219,11 @@ class LbddsController < ApplicationController
 
   def unpaid
     @lbdd = Lbdd.find(params[:id])
-<<<<<<< HEAD
+
     @lbdd.update_attribute :paid, 'no'
-=======
+
      @lbdd.update_attribute :paid, 'no'
->>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
+
 
     respond_to do |format|
       format.html { redirect_to :action => 'visual' }
