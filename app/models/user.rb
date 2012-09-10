@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
 	has_many :lbbb
 	has_many :lbaa
 	has_many :lba
+	has_many :lbb
+	has_many :lcc
+	has_many :lbd
 
 	def self.authenticate(username="",password="")
 		user = User.find_by_username(username)

@@ -1,0 +1,2 @@
+module LbcsHelper
+end

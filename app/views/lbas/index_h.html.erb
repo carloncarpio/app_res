@@ -1,17 +1,17 @@
 <br /><br /><br /><br />
 <div class="container">
-<h1>LB AA</h1>
+<h1>LB A</h1>
 <br />
 <ul class="nav-in">
-    <li><%= link_to 'A', {:controller => 'Lbaas',:action => 'index'}, :class => 'btn btn-danger' %></li>
-    <li><%= link_to 'B', {:controller => 'Lbaas',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
-    <li><%= link_to 'C', {:controller => 'Lbaas',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
-    <li><%= link_to 'D', {:controller => 'Lbaas',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
-    <li><%= link_to 'E', {:controller => 'Lbaas',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
-    <li><%= link_to 'F', {:controller => 'Lbaas',:action => 'index_f'}, :class => 'btn btn-danger' %></li>
-    <li><%= link_to 'G', {:controller => 'Lbaas',:action => 'index_g'}, :class => 'btn btn-danger' %></li>
-    <li><%= link_to 'H', {:controller => 'Lbaas',:action => 'index_h'}, :class => 'btn btn-danger' %></li>
-    <li><%= link_to 'I', {:controller => 'Lbaas',:action => 'index_i'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'A', {:controller => 'Lbas',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'B', {:controller => 'Lbas',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'C', {:controller => 'Lbas',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'D', {:controller => 'Lbas',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'E', {:controller => 'Lbas',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'F', {:controller => 'Lbas',:action => 'index_f'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'G', {:controller => 'Lbas',:action => 'index_g'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'H', {:controller => 'Lbas',:action => 'index_h'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'I', {:controller => 'Lbas',:action => 'index_i'}, :class => 'btn btn-danger' %></li>
 </ul>
 <br />
 <table class="table table-striped">
@@ -28,19 +28,19 @@
         <th></th>
     <% end %>   
   </tr>
-<% @lbaas.each do |lbaa| %>
-  <tr id='<%= dom_id lbaa %>'>
-    <td><%= lbaa.ticket_num %></td>
-    <td><%= lbaa.company_name %></td>
-    <td><%= lbaa.company_contact %></td>
-    <td><%= lbaa.company_email %></td>
-    <% if lbaa.paid == 'no' %>
+<% @lbas.each do |lba| %>
+  <tr id='<%= dom_id lba %>'>
+    <td><%= lba.ticket_num %></td>
+    <td><%= lba.company_name %></td>
+    <td><%= lba.company_contact %></td>
+    <td><%= lba.company_email %></td>
+    <% if lba.paid == 'no' %>
         <td><%= image_tag('cross.png') %></td>
     <% else %>
         <td><%= image_tag('check.png') %></td>
     <% end %>
 
-    <% if lbaa.approved == 'no' %>
+    <% if lba.approved == 'no' %>
         <td><%= image_tag('cross.png') %></td>
     <% else %>
         <td><%= image_tag('check.png') %></td>
@@ -48,9 +48,9 @@
         
     
     <% if session[:username] == 'superadmin' %>
-        <td><%= link_to 'Show', lbaa %></td>
-        <td><%= link_to 'Edit', edit_lbaa_path(lbaa) %></td>
-        <td><%= link_to 'Destroy', lbaa, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+        <td><%= link_to 'Show', lba %></td>
+        <td><%= link_to 'Edit', edit_lba_path(lba) %></td>
+        <td><%= link_to 'Destroy', lba, confirm: 'Are you sure?', method: :delete, remote: true %></td>
     <% end %>
   </tr>
 <% end %>
@@ -58,7 +58,7 @@
 
 <br />
 <%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
-<%= link_to 'View', {:controller => 'Lbaas', :action => 'visual'},:class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Lbas', :action => 'visual'},:class => 'btn btn-primary' %>
 
 
 </div>

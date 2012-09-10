@@ -131,7 +131,7 @@ class LbasController < ApplicationController
      @lba.update_attribute :approved, 'no'
      @lba.update_attribute :paid, 'no'
      respond_to do |format|
-      if @lbaa.status == false
+      if @lba.status == false
         if @lba.update_attribute :status, true
            @lba.update_attribute :company_name, session[:company_name]
            @lba.update_attribute :company_contact, session[:company_contact]

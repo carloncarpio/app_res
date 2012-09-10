@@ -1,4 +1,10 @@
 Reservation::Application.routes.draw do
+  resources :lbds
+
+  resources :lbcs
+
+  resources :lbbs
+
   resources :lbas
 
   resources :lbaas

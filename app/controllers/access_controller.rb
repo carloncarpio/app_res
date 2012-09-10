@@ -64,6 +64,18 @@ class AccessController < ApplicationController
     @lbaas_all = Lbaa.all
     @lbaas = Lbaa.where(:status => true)
 
+    @lbas_all = Lba.all
+    @lbas = Lba.where(:status => true)
+
+    @lbbs_all = Lbb.all
+    @lbbs = Lbb.where(:status => true)
+
+    @lbcs_all = Lbb.all
+    @lbcs = Lbb.where(:status => true)
+
+    @lbds_all = Lbd.all
+    @lbds = Lbd.where(:status => true)
+
     @csaas_all = Csaa.all
     @csaas = Csaa.where(:status => true)
 

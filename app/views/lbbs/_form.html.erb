@@ -1,0 +1,65 @@
+<%= form_for(@lbb) do |f| %>
+  <% if @lbb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lbb.errors.count, "error") %> prohibited this lbb from being saved:</h2>
+
+      <ul>
+      <% @lbb.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ticket_num %><br />
+    <%= f.text_field :ticket_num %>
+  </div>
+  <div class="field">
+    <%= f.label :company_name %><br />
+    <%= f.text_field :company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :company_contact %><br />
+    <%= f.text_field :company_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :company_email %><br />
+    <%= f.text_field :company_email %>
+  </div>
+  <div class="field">
+    <%= f.label :flag %><br />
+    <%= f.number_field :flag %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.check_box :status %>
+  </div>
+  <div class="field">
+    <%= f.label :section %><br />
+    <%= f.text_field :section %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :approved %><br />
+    <%= f.text_field :approved %>
+  </div>
+  <div class="field">
+    <%= f.label :paid %><br />
+    <%= f.text_field :paid %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :main_section %><br />
+    <%= f.text_field :main_section %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
