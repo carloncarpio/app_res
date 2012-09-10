@@ -96,11 +96,11 @@ class SrsaavipaasController < ApplicationController
   end
 
   def visual
-    @srsaavipaas_a = Srsaavipaa.find_section('A').order("id")
-    @srsaavipaas_b = Srsaavipaa.find_section('B').order("id")
-    @srsaavipaas_c = Srsaavipaa.find_section('C').order("id")
-    @srsaavipaas_d = Srsaavipaa.find_section('D').order("id")
-    @srsaavipaas_e = Srsaavipaa.find_section('E').order("id")
+    @srsaavipaas_a = Srsaavipaa.find_section('A').order("id DESC")
+    @srsaavipaas_b = Srsaavipaa.find_section('B').order("id DESC")
+    @srsaavipaas_c = Srsaavipaa.find_section('C').order("id DESC")
+    @srsaavipaas_d = Srsaavipaa.find_section('D').order("id DESC")
+    @srsaavipaas_e = Srsaavipaa.find_section('E').order("id DESC")
 
     @srsaavipaas_with = Srsaavipaa.where(:status => true)
     @srsaavipaas = Srsaavipaa.all

@@ -18,7 +18,7 @@ class CompanyController < ApplicationController
     #@email = Vipbbsrsbb.all
     #@comp = Vipbbsrsbb.all
     #UserMailer.send_reserves(@email,@comp).deliver
-    redirect_to(:controller => 'Vipbbsrsbb',:action => 'visual')
+    redirect_to(:controller => 'Vipbbsrsbbs',:action => 'visual')
   end
 
 end

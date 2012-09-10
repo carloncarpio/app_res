@@ -1,8 +1,8 @@
 <div class="container">
 	<div class="body_content">	
 	<h3>Section SRS AA </h3>
-
-	<table id="visual_srsaa" >
+	<br/>
+	<table id="visual_srsaa" style="margin-left:276px;">
 		<tr>
 			<% @srsaas_a.each do |srsaa_a| %>
 				<% if srsaa_a.approved == 'yes' %>
@@ -19,7 +19,8 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+		</table>
+		<table id="visual_srsaa" style="margin-left:207px;">
 		<tr>
 			<% @srsaas_b.each do |srsaa_b| %>
 				<% if srsaa_b.approved == 'yes' %>
@@ -36,7 +37,8 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+		</table>
+		<table id="visual_srsaa" style="margin-left:138px;">
 		<tr>
 			<% @srsaas_c.each do |srsaa_c| %>
 				<% if srsaa_c.approved == 'yes' %>
@@ -54,7 +56,8 @@
 			<% end %>	
 		</tr>
 
-		
+		</table>
+		<table id="visual_srsaa" style="margin-left:115px;">
 		<tr>
 			<% @srsaas_d.each do |srsaa_d| %>
 				<% if srsaa_d.approved == 'yes' %>
@@ -71,8 +74,10 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+		</table>
+		<table id="visual_srsaa">
 		<tr>
+			
 			<% @srsaas_e.each do |srsaa_e| %>
 				<% if srsaa_e.approved == 'yes' %>
 					<td class="<%= srsaa_e.status %>"><a><%= srsaa_e.ticket_num %></a></td>
@@ -89,13 +94,13 @@
 			<% end %>
 		</tr>
 		
-	</table>
+	</table><br/>
 	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
 
 	</div><!-- body_content -->
 
-	<div id="my_reserve">
+	<div id="my_reserve_01">
 		<% if session[:username] == 'admin' %>
 			<h3>Reservations for this Section</h3>
 			<table class="table table-striped">
@@ -143,6 +148,7 @@
 	<div class="notes">
 		<p><%= @srsaas_total %> approved <% if @srsaas_total == 1 %>seat<% else %>seats<% end %>.</p>
 		<p><%= @srsaas_pending %> pending <% if @srsaas_pending == 1 %>seat<% else %>seats<% end %>.</p>
+		<%= image_tag('srsaa.jpg') %>
 	</div>
 
 

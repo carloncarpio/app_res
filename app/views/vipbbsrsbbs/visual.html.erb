@@ -1,16 +1,13 @@
 <div class="container">
 	<div class="body_content">	
 	<h3>Section VIP BB / SRS BB</h3>
-
-	<table id="visual_vipbbsrsbb" >
+	<br />
+	<table id="visual_vipbbsrsbb" style="width:415px;">
 		<tr>
 			<% @vipbbsrsbbs_a.each do |vipbbsrsbb_a| %>
 				<% if vipbbsrsbb_a.approved == 'yes' %>
 					<td class="<%= vipbbsrsbb_a.status %>"><a><%= vipbbsrsbb_a.ticket_num %></a></td>
-				<% elsif vipbbsrsbb_a.ticket_num == 'A6' %>
-					<td style="width:20px;"></td>
-				<% elsif vipbbsrsbb_a.ticket_num == 'A12' %>
-					<td style="width:20px;"></td>
+				
 				<% else %>
 				<td id='<%= dom_id vipbbsrsbb_a %>' class="<%= vipbbsrsbb_a.status %>">
 					<% if vipbbsrsbb_a.status == false %>
@@ -23,15 +20,13 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+	</table>
+		<table id="visual_vipbbsrsbb" style="width:415px;">
 		<tr>
 			<% @vipbbsrsbbs_b.each do |vipbbsrsbb_b| %>
 				<% if vipbbsrsbb_b.approved == 'yes' %>
 					<td class="<%= vipbbsrsbb_b.status %>"><a><%= vipbbsrsbb_b.ticket_num %></a></td>
-				<% elsif vipbbsrsbb_b.ticket_num == 'B6' %>
-					<td style="width:20px;"></td>
-				<% elsif vipbbsrsbb_b.ticket_num == 'B12' %>
-					<td style="width:20px;"></td>
+				
 				<% else %>
 				<td id='<%= dom_id vipbbsrsbb_b %>' class="<%= vipbbsrsbb_b.status %>">
 					<% if vipbbsrsbb_b.status == false %>
@@ -44,7 +39,8 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+	</table>
+	<table id="visual_vipbbsrsbb" style="width:415px;">
 		<tr>
 			<% @vipbbsrsbbs_c.each do |vipbbsrsbb_c| %>
 				<% if vipbbsrsbb_c.approved == 'yes' %>
@@ -61,7 +57,8 @@
 				<% end %>	
 			<% end %>	
 		</tr>
-
+		</table>
+	<table id="visual_vipbbsrsbb" style="width:415px;">
 		
 		<tr>
 			<% @vipbbsrsbbs_d.each do |vipbbsrsbb_d| %>
@@ -79,7 +76,8 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+		</table>
+	<table id="visual_vipbbsrsbb">
 		<tr>
 			<% @vipbbsrsbbs_e.each do |vipbbsrsbb_e| %>
 				<% if vipbbsrsbb_e.approved == 'yes' %>
@@ -97,6 +95,7 @@
 			<% end %>
 		</tr>
 	</table>
+	<br />
 	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
 

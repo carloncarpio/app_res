@@ -1,12 +1,13 @@
 <div class="container">
 	<div class="body_content">	
 	<h3>Section SRS AA / VIP AA</h3>
-
-	<table id="visual_srsaavipaa" >
+<br />
+	<table id="visual_srsaavipaa" style="margin-left:40px;">
 		<tr>
+			
 			<% @srsaavipaas_a.each do |srsaavipaa_a| %>
 				<% if srsaavipaa_a.approved == 'yes' %>
-					<td class="<%= srsaavipaa_a.status %>"><a><%= srsaavipaa_a.ticket_num %></a></td>
+					<td class="<%= srsaavipaa_a.status %>" ><a><%= srsaavipaa_a.ticket_num %></a></td>
 				<% else %>
 				<td id='<%= dom_id srsaavipaa_a %>' class="<%= srsaavipaa_a.status %>">
 					<% if srsaavipaa_a.status == false %>
@@ -19,8 +20,10 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+		</table>
+		<table id="visual_srsaavipaa" style="margin-left:40px;">
 		<tr>
+			
 			<% @srsaavipaas_b.each do |srsaavipaa_b| %>
 				<% if srsaavipaa_b.approved == 'yes' %>
 					<td class="<%= srsaavipaa_b.status %>"><a><%= srsaavipaa_b.ticket_num %></a></td>
@@ -36,8 +39,10 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+		</table>
+		<table id="visual_srsaavipaa" style="width:369px;margin-left:40px;" >
 		<tr>
+			
 			<% @srsaavipaas_c.each do |srsaavipaa_c| %>
 				<% if srsaavipaa_c.approved == 'yes' %>
 					<td class="<%= srsaavipaa_c.status %>"><a><%= srsaavipaa_c.ticket_num %></a></td>
@@ -53,9 +58,10 @@
 				<% end %>	
 			<% end %>	
 		</tr>
-
-		
-		<tr>
+		</table>
+		<table id="visual_srsaavipaa" style="width:369px;margin-left:40px;">
+		<tr >
+			
 			<% @srsaavipaas_d.each do |srsaavipaa_d| %>
 				<% if srsaavipaa_d.approved == 'yes' %>
 					<td class="<%= srsaavipaa_d.status %>"><a><%= srsaavipaa_d.ticket_num %></a></td>
@@ -71,8 +77,11 @@
 				<% end %>
 			<% end %>		
 		</tr>
+		
 
+		<table id="visual_srsaavipaa" style="width:409px;">
 		<tr>
+			
 			<% @srsaavipaas_e.each do |srsaavipaa_e| %>
 				<% if srsaavipaa_e.approved == 'yes' %>
 					<td class="<%= srsaavipaa_e.status %>"><a><%= srsaavipaa_e.ticket_num %></a></td>
@@ -89,7 +98,7 @@
 			<% end %>
 		</tr>
 		
-	</table>
+	</table><br />
 	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
 

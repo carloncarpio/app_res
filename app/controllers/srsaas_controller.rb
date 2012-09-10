@@ -108,15 +108,15 @@ class SrsaasController < ApplicationController
   end
 
   def visual
-    @srsaas_a = Srsaa.find_section('A').order("id")
-    @srsaas_b = Srsaa.find_section('B').order("id")
-    @srsaas_c = Srsaa.find_section('C').order("id")
-    @srsaas_d = Srsaa.find_section('D').order("id")
-    @srsaas_e = Srsaa.find_section('E').order("id")
-    @srsaas_f = Srsaa.find_section('F').order("id")
-    @srsaas_g = Srsaa.find_section('G').order("id")
-    @srsaas_h = Srsaa.find_section('H').order("id")
-    @srsaas_i = Srsaa.find_section('I').order("id")
+    @srsaas_a = Srsaa.find_section('A').order("id DESC")
+    @srsaas_b = Srsaa.find_section('B').order("id DESC")
+    @srsaas_c = Srsaa.find_section('C').order("id DESC")
+    @srsaas_d = Srsaa.find_section('D').order("id DESC")
+    @srsaas_e = Srsaa.find_section('E').order("id DESC")
+    @srsaas_f = Srsaa.find_section('F').order("id DESC")
+    @srsaas_g = Srsaa.find_section('G').order("id DESC")
+    @srsaas_h = Srsaa.find_section('H').order("id DESC")
+    @srsaas_i = Srsaa.find_section('I').order("id DESC")
 
     @srsaas_with = Srsaa.where(:status => true)
     @srsaas = Srsaa.all
