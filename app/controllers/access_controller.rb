@@ -42,6 +42,40 @@ class AccessController < ApplicationController
   def public
     @vipbbsrsbbs_all = Vipbbsrsbb.all
     @vipbbsrsbbs = Vipbbsrsbb.where(:status => true)
+
+    @srsaavipaas_all = Srsaavipaa.all
+    @srsaavipaas = Srsaavipaa.where(:status => true)
+
+    @srsaas_all = Srsaavipaa.all
+    @srsaas = Srsaavipaa.where(:status => true)
+
+    @srsas_all = Srsa.all
+    @srsas = Srsa.where(:status => true)
+
+    @lbdds_all = Lbdd.all
+    @lbdds = Lbdd.where(:status => true)
+
+    @lbccs_all = Lbcc.all
+    @lbccs = Lbcc.where(:status => true)
+
+    @lbbbs_all = Lbbb.all
+    @lbbbs = Lbbb.where(:status => true)
+
+    @lbaas_all = Lbaa.all
+    @lbaas = Lbaa.where(:status => true)
+
+    @csaas_all = Csaa.all
+    @csaas = Csaa.where(:status => true)
+
+    @csas_all = Csa.all
+    @csas = Csa.where(:status => true)
+
+    @vipasrsas_all = Vipasrsa.all
+    @vipasrsas = Vipasrsa.where(:status => true)
+
+    @srsbvipbs_all = Srsbvipb.all
+    @srsbvipbs = Srsbvipb.where(:status => true)
+
   end
 
   def admin

@@ -1,0 +1,63 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>LB BB</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'A', {:controller => 'Lbbbs',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'B', {:controller => 'Lbbbs',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'C', {:controller => 'Lbbbs',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'D', {:controller => 'Lbbbs',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'E', {:controller => 'Lbbbs',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'F', {:controller => 'Lbbbs',:action => 'index_f'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'G', {:controller => 'Lbbbs',:action => 'index_g'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'H', {:controller => 'Lbbbs',:action => 'index_h'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'I', {:controller => 'Lbbbs',:action => 'index_i'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'superadmin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+<% @lbbbs.each do |lbbb| %>
+  <tr id='<%= dom_id lbbb %>'>
+    <td><%= lbbb.ticket_num %></td>
+    <td><%= lbbb.company_name %></td>
+    <td><%= lbbb.company_contact %></td>
+    <td><%= lbbb.company_email %></td>
+    <% if lbbb.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if lbbb.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+        
+    
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', lbbb %></td>
+        <td><%= link_to 'Edit', edit_lbbb_path(lbbb) %></td>
+        <td><%= link_to 'Destroy', lbbb, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Lbbbs', :action => 'visual'},:class => 'btn btn-primary' %>
+
+</div>

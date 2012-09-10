@@ -1,0 +1,61 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>SRS A</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'A', {:controller => 'Srsas',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'B', {:controller => 'Srsas',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'C', {:controller => 'Srsas',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'D', {:controller => 'Srsas',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'E', {:controller => 'Srsas',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'F', {:controller => 'Srsas',:action => 'index_f'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'superadmin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+<% @srsas.each do |srsa| %>
+  <tr id='<%= dom_id srsa %>'>
+    <td><%= srsa.ticket_num %></td>
+    <td><%= srsa.company_name %></td>
+    <td><%= srsa.company_contact %></td>
+    <td><%= srsa.company_email %></td>
+    <% if srsa.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if srsa.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+        
+    
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', srsa %></td>
+        <td><%= link_to 'Edit', edit_srsa_path(srsa) %></td>
+        <td><%= link_to 'Destroy', srsa, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Srsas', :action => 'visual'},:class => 'btn btn-primary' %>
+
+
+</div>

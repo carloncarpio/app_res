@@ -1,0 +1,81 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>SRS AA</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'Section A', {:controller => 'Srsaas',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section B', {:controller => 'Srsaas',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section C', {:controller => 'Srsaas',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section D', {:controller => 'Srsaas',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section E', {:controller => 'Srsaas',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'superadmin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+<% @srsaas.each do |srsaa| %>
+  <tr id='<%= dom_id srsaa %>'>
+    <td><%= srsaa.ticket_num %></td>
+    <td><%= srsaa.company_name %></td>
+    <td><%= srsaa.company_contact %></td>
+    <td><%= srsaa.company_email %></td>
+    <% if srsaa.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if srsaa.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+        
+    
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', srsaa %></td>
+        <td><%= link_to 'Edit', edit_srsaa_path(srsaa) %></td>
+        <td><%= link_to 'Destroy', srsaa, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Srsaas', :action => 'visual'},:class => 'btn btn-primary' %>
+
+<% if session[:username] == 'admin' %>
+    <%= form_for(Srsaa.new) do |f| %>
+     
+      <div class="field">
+        <br /><br /><br />
+        <h4>Add Seats</h4><br />
+        <%= f.label :ticket_num %>
+        <%= f.text_field :ticket_num %>
+      
+        <%= f.label :section %>
+        <%= f.text_field :section %>
+        <%= f.hidden_field :status, :value => false %>
+        <%= f.hidden_field :approved, :value => 'no' %>
+        <%= f.hidden_field :paid, :value => 'no' %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit('Create Seat') %>
+      </div>
+    
+    <% end %>
+<% end %>
+</div>

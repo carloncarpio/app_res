@@ -108,6 +108,9 @@ class VipbbsrsbbsController < ApplicationController
     @vipbbsrsbbs_with = Vipbbsrsbb.where(:status => true)
     @vipbbsrsbbs = Vipbbsrsbb.all
     @my_vipbbsrsbbs = Vipbbsrsbb.find_reserve(session[:company_name]).order("id")
+
+    @vipbbsrsbbs_total = Vipbbsrsbb.total_approved('yes').size
+    @vipbbsrsbbs_pending = Vipbbsrsbb.total_pending('no',true).size
   end
 
   def update_status

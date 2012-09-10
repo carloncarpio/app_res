@@ -11,14 +11,115 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904060406) do
+ActiveRecord::Schema.define(:version => 20120909034330) do
+
+  create_table "csaas", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "csas", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "lbaas", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "lbas", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "lbbbs", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "lbccs", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "lbdds", :force => true do |t|
     t.string   "ticket_num"
     t.string   "company_name"
     t.string   "company_contact"
     t.integer  "flag"
-    t.string   "status"
     t.string   "section"
     t.integer  "price"
     t.string   "approved"
@@ -28,9 +129,78 @@ ActiveRecord::Schema.define(:version => 20120904060406) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "company_email"
+    t.boolean  "status"
   end
 
   add_index "lbdds", ["user_id"], :name => "index_lbdds_on_user_id"
+
+  create_table "srsaas", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "srsaavipaas", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "srsas", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "srsbvipbs", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -41,6 +211,23 @@ ActiveRecord::Schema.define(:version => 20120904060406) do
     t.integer  "flag",            :default => 0
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "vipasrsas", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "vipbbsrsbbs", :force => true do |t|

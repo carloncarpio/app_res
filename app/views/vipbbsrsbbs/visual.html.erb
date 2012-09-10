@@ -117,15 +117,15 @@
 					<td><%= my.ticket_num %></td>
 					<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
 					<td><% if my.paid == 'no' %>
-						<%= link_to('No',{:action => 'paid', :id => my.id}) %>
+						<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => my.id}) %>
 						<% else %>
-						<%= link_to('Yes',{:action => 'unpaid', :id => my.id}) %>	
+						<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => my.id}) %>	
 						<% end %>
 					</td>
 					<% if my.approved == 'no' %>
-					 <td><%= link_to('Approved', :action => 'approved', :id => my.id) %></td>
+					 <td><%= link_to(image_tag('cross.png'), :action => 'approved', :id => my.id) %></td>
 					 <% else %>
-					 	<td><%= link_to('DisApproved', :action => 'disapproved', :id => my.id) %></td>
+					 	<td><%= link_to(image_tag('check.png'), :action => 'disapproved', :id => my.id) %></td>
 					 <% end %>
 					 
 				</tr>
@@ -145,6 +145,11 @@
 					<% end %>
 			</table>
 		<% end %>
+	</div>
+
+	<div class="notes">
+		<p><%= @vipbbsrsbbs_total %> approved <% if @vipbbsrsbbs_total == 1 %>seat<% else %>seats<% end %>.</p>
+		<p><%= @vipbbsrsbbs_pending %> pending <% if @vipbbsrsbbs_pending == 1 %>seat<% else %>seats<% end %>.</p>
 	</div>
 
 

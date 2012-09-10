@@ -10,8 +10,19 @@
 }
 a{color:#666;}
 
-table#visual_vipbbsrsbb,table#visual_lbdd{margin:20px 0;}
-table#visual_vipbbsrsbb td{border: 1px solid #000;//background-color: red;text-align: center;}
+table#visual_vipbbsrsbb,table#visual_lbdd,
+table#visual_srsaavipaa,table#visual_lbcc,
+table#visual_srsaa,table#visual_csaa,
+table#visual_csa,table#visual_srsa,table#visual_vipasrsa,
+table#visual_srsbvipb,table#visual_lbbb,table#visual_lbaa,
+table#visual_lba td,{margin:20px 0;}
+
+table#visual_vipbbsrsbb td,table#visual_lbdd td,
+table#visual_srsaavipaa td,table#visual_lbcc td,
+table#visual_srsaa td,table#visual_csaa td,
+table#visual_csa td,table#visual_srsa td,
+table#visual_vipasrsa td,table#visual_srsbvipb td,table#visual_lbaa td,
+table#visual_lbbb td,table#visual_lba td{border: 1px solid #000;//background-color: red;text-align: center;width:20px;}
 .false, .true {border: 1px solid #000;text-align: center;width:20px;}
 //.false{background-color: red;color:blue;}
 .true{background-color: green;color:white;}
@@ -39,3 +50,5 @@ ul li{float: left;margin:0 10px 0 0;list-style-type: none;}
 .seat_nav{//position:absolute;right: 0;top:0;float:right;margin-right: 420px;margin-top: 50px;}
 //.seat_nav ul {float:right;display:inline;}
 //.seat_nav ul li a{float:right;display: block;}
+
+.notes{border: 1px solid #ccc;border-radius: 4px;width: 20%;padding:10px;margin-top: 40px;}

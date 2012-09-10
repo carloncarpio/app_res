@@ -1,4 +1,26 @@
 Reservation::Application.routes.draw do
+  resources :lbas
+
+  resources :lbaas
+
+  resources :lbbbs
+
+  resources :srsbvipbs
+
+  resources :vipasrsas
+
+  resources :srsas
+
+  resources :csas
+
+  resources :csaas
+
+  resources :srsaas
+
+  resources :lbccs
+
+  resources :srsaavipaas
+
   get "company/show_comp"
 
   resources :lbdds

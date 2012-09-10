@@ -1,0 +1,83 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>LB / CC</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'A', {:controller => 'Lbccs',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'B', {:controller => 'Lbccs',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'C', {:controller => 'Lbccs',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'D', {:controller => 'Lbccs',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'E', {:controller => 'Lbccs',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'F', {:controller => 'Lbccs',:action => 'index_f'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'G', {:controller => 'Lbccs',:action => 'index_g'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'H', {:controller => 'Lbccs',:action => 'index_h'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'I', {:controller => 'Lbccs',:action => 'index_i'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'superadmin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+<% @lbccs.each do |lbcc| %>
+  <tr id='<%= dom_id lbcc %>'>
+    <td><%= lbcc.ticket_num %></td>
+    <td><%= lbcc.company_name %></td>
+    <td><%= lbcc.company_contact %></td>
+    <td><%= lbcc.company_email %></td>
+    <% if lbcc.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if lbcc.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', lbcc %></td>
+        <td><%= link_to 'Edit', edit_lbcc_path(lbcc) %></td>
+        <td><%= link_to 'Destroy', lbcc, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Lbccs', :action => 'visual'},:class => 'btn btn-primary' %>
+
+<% if session[:username] == 'admin' %>
+    <%= form_for(Lbcc.new) do |f| %>
+     
+      <div class="field">
+        <br /><br /><br />
+        <h4>Add Seats</h4><br />
+        <%= f.label :ticket_num %>
+        <%= f.text_field :ticket_num %>
+      
+        <%= f.label :section %>
+        <%= f.text_field :section %>
+        <%= f.hidden_field :status, :value => false %>
+        <%= f.hidden_field :approved, :value => 'no' %>
+        <%= f.hidden_field :paid, :value => 'no' %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit('Create Seat') %>
+      </div>
+    
+    <% end %>
+<% end %>
+</div>

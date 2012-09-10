@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ticket_num: MyString
+  company_name: MyString
+  company_contact: MyString
+  company_email: MyString
+  flag: 1
+  status: false
+  section: MyString
+  price: MyString
+  approved: MyString
+  paid: MyString
+  user_id: 1
+  main_section: MyString
+
+two:
+  ticket_num: MyString
+  company_name: MyString
+  company_contact: MyString
+  company_email: MyString
+  flag: 1
+  status: false
+  section: MyString
+  price: MyString
+  approved: MyString
+  paid: MyString
+  user_id: 1
+  main_section: MyString

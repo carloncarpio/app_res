@@ -1,0 +1,168 @@
+<div class="container">
+	<div class="body_content">	
+	<h3>Section VIP A / SRS A </h3>
+
+	<table id="visual_vipasrsa" >
+		<tr>
+			<% @vipasrsas_a.each do |vipasrsa_a| %>
+				<% if vipasrsa_a.approved == 'yes' %>
+					<td class="<%= vipasrsa_a.status %>"><a><%= vipasrsa_a.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id vipasrsa_a %>' class="<%= vipasrsa_a.status %>">
+					<% if vipasrsa_a.status == false %>
+					<%= link_to vipasrsa_a.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_a.id}, remote: true %></td>
+					<% elsif vipasrsa_a.status == true && session[:company_name] == vipasrsa_a.company_name %>
+					<%= link_to vipasrsa_a.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_a.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to vipasrsa_a.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @vipasrsas_b.each do |vipasrsa_b| %>
+				<% if vipasrsa_b.approved == 'yes' %>
+					<td class="<%= vipasrsa_b.status %>"><a><%= vipasrsa_b.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id vipasrsa_b %>' class="<%= vipasrsa_b.status %>">
+					<% if vipasrsa_b.status == false %>
+					<%= link_to vipasrsa_b.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_b.id}, remote: true %></td>
+					<% elsif vipasrsa_b.status == true && session[:company_name] == vipasrsa_b.company_name %>
+					<%= link_to vipasrsa_b.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_b.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to vipasrsa_b.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @vipasrsas_c.each do |vipasrsa_c| %>
+				<% if vipasrsa_c.approved == 'yes' %>
+					<td class="<%= vipasrsa_c.status %>"><a><%= vipasrsa_c.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id vipasrsa_c %>' class="<%= vipasrsa_c.status %>">
+					<% if vipasrsa_c.status == false %>
+					<%= link_to vipasrsa_c.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_c.id}, remote: true %></td>
+					<% elsif vipasrsa_c.status == true && session[:company_name] == vipasrsa_c.company_name %>
+					<%= link_to vipasrsa_c.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_c.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to vipasrsa_c.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>	
+		</tr>
+
+		
+		<tr>
+			<% @vipasrsas_d.each do |vipasrsa_d| %>
+				<% if vipasrsa_d.approved == 'yes' %>
+					<td class="<%= vipasrsa_d.status %>"><a><%= vipasrsa_d.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id vipasrsa_d %>' class="<%= vipasrsa_d.status %>">
+					<% if vipasrsa_d.status == false %>
+					<%= link_to vipasrsa_d.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_d.id}, remote: true %></td>
+					<% elsif vipasrsa_d.status == true && session[:company_name] == vipasrsa_d.company_name %>
+					<%= link_to vipasrsa_d.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_d.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to vipasrsa_d.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @vipasrsas_e.each do |vipasrsa_e| %>
+				<% if vipasrsa_e.approved == 'yes' %>
+					<td class="<%= vipasrsa_e.status %>"><a><%= vipasrsa_e.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id vipasrsa_e %>' class="<%= vipasrsa_e.status %>">
+					<% if vipasrsa_e.status == false %>
+					<%= link_to vipasrsa_e.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_e.id}, remote: true %></td>
+					<% elsif vipasrsa_e.status == true && session[:company_name] == vipasrsa_e.company_name %>
+					<%= link_to vipasrsa_e.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_e.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to vipasrsa_e.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @vipasrsas_f.each do |vipasrsa_f| %>
+				<% if vipasrsa_f.approved == 'yes' %>
+					<td class="<%= vipasrsa_f.status %>"><a><%= vipasrsa_f.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id vipasrsa_f %>' class="<%= vipasrsa_f.status %>">
+					<% if vipasrsa_f.status == false %>
+					<%= link_to vipasrsa_f.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_f.id}, remote: true %></td>
+					<% elsif vipasrsa_f.status == true && session[:company_name] == vipasrsa_f.company_name %>
+					<%= link_to vipasrsa_f.ticket_num, {:controller => 'vipasrsas' ,:action => 'update_status', :id => vipasrsa_f.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to vipasrsa_f.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+		
+	</table>
+	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
+
+	</div><!-- body_content -->
+
+	<div id="my_reserve">
+		<% if session[:username] == 'admin' %>
+			<h3>Reservations for this Section</h3>
+			<table class="table table-striped">
+				<tr>
+					<td>Seat</td>
+					<td>Company</td>
+					<td>Paid</td>
+					<td>Approved</td>
+				</tr>
+			<% @vipasrsas_with.each do |my| %>
+				<tr id='<%= dom_id my %>'>
+					<td><%= my.ticket_num %></td>
+					<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
+					<td><% if my.paid == 'no' %>
+						<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => my.id}) %>
+						<% else %>
+						<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => my.id}) %>	
+						<% end %>
+					</td>
+					<% if my.approved == 'no' %>
+					 <td><%= link_to(image_tag('cross.png'), :action => 'approved', :id => my.id) %></td>
+					 <% else %>
+					 	<td><%= link_to(image_tag('check.png'), :action => 'disapproved', :id => my.id) %></td>
+					 <% end %>
+					 
+				</tr>
+			<% end %>
+			</table>
+		<% else %>
+			<table class="table table-striped">
+				<h4>My Reservation</h4>
+					<% if @my_vipasrsas.empty? %>
+						<p>You have no reservation for this section</p>
+					<% else %>
+					<% @my_vipasrsas.each do |my| %>
+						<tr>
+							<td><%= my.ticket_num %> - <%= my.company_name %></td>
+						</tr>
+					<% end %>
+					<% end %>
+			</table>
+		<% end %>
+	</div>
+
+	<div class="notes">
+		<p><%= @vipasrsas_total %> approved <% if @vipasrsas_total == 1 %>seat<% else %>seats<% end %>.</p>
+		<p><%= @vipasrsas_pending %> pending <% if @vipasrsas_pending == 1 %>seat<% else %>seats<% end %>.</p>
+	</div>
+
+
+
+</div><!-- container -->
+

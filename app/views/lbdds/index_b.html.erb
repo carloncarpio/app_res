@@ -20,6 +20,7 @@
     <th>Company Name</th>
     <th>Contact</th>
     <th>Email</th>
+    <th>Paid</th>
     <th>Approved</th>
     <% if session[:username] == 'admin' %>
         <th></th>
@@ -33,8 +34,18 @@
     <td><%= lbdd.company_name %></td>
     <td><%= lbdd.company_contact %></td>
     <td><%= lbdd.company_email %></td>
-    <td><%= lbdd.status %></td>
-    <% if session[:username] == 'admin' %>
+    <% if lbdd.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if lbdd.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+    <% if session[:username] == 'superadmin' %>
         <td><%= link_to 'Show', lbdd %></td>
         <td><%= link_to 'Edit', edit_lbdd_path(lbdd) %></td>
         <td><%= link_to 'Destroy', lbdd, confirm: 'Are you sure?', method: :delete, remote: true %></td>
@@ -44,8 +55,7 @@
 </table>
 
 <br />
-<% if session[:username] == 'admin' %>
-    <%= link_to 'New Reservation', new_lbdd_path,:class => 'btn btn-primary' %>
-<% end %>
+
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 <%= link_to 'View', {:controller => 'Lbdds', :action => 'visual'},:class => 'btn btn-primary' %>
 </div>

@@ -1,0 +1,236 @@
+<div class="container">
+	<div class="body_content">	
+	<h3>Section SRS A </h3>
+
+	<table id="visual_srsa" >
+		<tr>
+			<% @srsas_a.each do |srsa_a| %>
+				<% if srsa_a.approved == 'yes' %>
+					<td class="<%= srsa_a.status %>"><a><%= srsa_a.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_a %>' class="<%= srsa_a.status %>">
+					<% if srsa_a.status == false %>
+					<%= link_to srsa_a.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_a.id}, remote: true %></td>
+					<% elsif srsa_a.status == true && session[:company_name] == srsa_a.company_name %>
+					<%= link_to srsa_a.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_a.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_a.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @srsas_b.each do |srsa_b| %>
+				<% if srsa_b.approved == 'yes' %>
+					<td class="<%= srsa_b.status %>"><a><%= srsa_b.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_b %>' class="<%= srsa_b.status %>">
+					<% if srsa_b.status == false %>
+					<%= link_to srsa_b.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_b.id}, remote: true %></td>
+					<% elsif srsa_b.status == true && session[:company_name] == srsa_b.company_name %>
+					<%= link_to srsa_b.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_b.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_b.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @srsas_c.each do |srsa_c| %>
+				<% if srsa_c.approved == 'yes' %>
+					<td class="<%= srsa_c.status %>"><a><%= srsa_c.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_c %>' class="<%= srsa_c.status %>">
+					<% if srsa_c.status == false %>
+					<%= link_to srsa_c.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_c.id}, remote: true %></td>
+					<% elsif srsa_c.status == true && session[:company_name] == srsa_c.company_name %>
+					<%= link_to srsa_c.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_c.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_c.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>	
+		</tr>
+
+		
+		<tr>
+			<% @srsas_d.each do |srsa_d| %>
+				<% if srsa_d.approved == 'yes' %>
+					<td class="<%= srsa_d.status %>"><a><%= srsa_d.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_d %>' class="<%= srsa_d.status %>">
+					<% if srsa_d.status == false %>
+					<%= link_to srsa_d.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_d.id}, remote: true %></td>
+					<% elsif srsa_d.status == true && session[:company_name] == srsa_d.company_name %>
+					<%= link_to srsa_d.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_d.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_d.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @srsas_e.each do |srsa_e| %>
+				<% if srsa_e.approved == 'yes' %>
+					<td class="<%= srsa_e.status %>"><a><%= srsa_e.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_e %>' class="<%= srsa_e.status %>">
+					<% if srsa_e.status == false %>
+					<%= link_to srsa_e.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_e.id}, remote: true %></td>
+					<% elsif srsa_e.status == true && session[:company_name] == srsa_e.company_name %>
+					<%= link_to srsa_e.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_e.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_e.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @srsas_f.each do |srsa_f| %>
+				<% if srsa_f.approved == 'yes' %>
+					<td class="<%= srsa_f.status %>"><a><%= srsa_f.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_f %>' class="<%= srsa_f.status %>">
+					<% if srsa_f.status == false %>
+					<%= link_to srsa_f.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_f.id}, remote: true %></td>
+					<% elsif srsa_f.status == true && session[:company_name] == srsa_f.company_name %>
+					<%= link_to srsa_f.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_f.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_f.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @srsas_g.each do |srsa_g| %>
+				<% if srsa_g.approved == 'yes' %>
+					<td class="<%= srsa_g.status %>"><a><%= srsa_g.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_g %>' class="<%= srsa_g.status %>">
+					<% if srsa_g.status == false %>
+					<%= link_to srsa_g.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_g.id}, remote: true %></td>
+					<% elsif srsa_g.status == true && session[:company_name] == srsa_g.company_name %>
+					<%= link_to srsa_g.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_g.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_g.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @srsas_h.each do |srsa_h| %>
+				<% if srsa_h.approved == 'yes' %>
+					<td class="<%= srsa_h.status %>"><a><%= srsa_h.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_h %>' class="<%= srsa_h.status %>">
+					<% if srsa_h.status == false %>
+					<%= link_to srsa_h.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_h.id}, remote: true %></td>
+					<% elsif srsa_h.status == true && session[:company_name] == srsa_h.company_name %>
+					<%= link_to srsa_h.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_h.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_h.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @srsas_i.each do |srsa_i| %>
+				<% if srsa_i.approved == 'yes' %>
+					<td class="<%= srsa_i.status %>"><a><%= srsa_i.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_i %>' class="<%= srsa_i.status %>">
+					<% if srsa_i.status == false %>
+					<%= link_to srsa_i.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_i.id}, remote: true %></td>
+					<% elsif srsa_i.status == true && session[:company_name] == srsa_i.company_name %>
+					<%= link_to srsa_i.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_i.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_i.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @srsas_j.each do |srsa_j| %>
+				<% if srsa_j.approved == 'yes' %>
+					<td class="<%= srsa_j.status %>"><a><%= srsa_j.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id srsa_j %>' class="<%= srsa_j.status %>">
+					<% if srsa_j.status == false %>
+					<%= link_to srsa_j.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_j.id}, remote: true %></td>
+					<% elsif srsa_j.status == true && session[:company_name] == srsa_j.company_name %>
+					<%= link_to srsa_j.ticket_num, {:controller => 'srsas' ,:action => 'update_status', :id => srsa_j.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to srsa_j.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+		
+	</table>
+	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
+
+	</div><!-- body_content -->
+
+	<div id="my_reserve">
+		<% if session[:username] == 'admin' %>
+			<h3>Reservations for this Section</h3>
+			<table class="table table-striped">
+				<tr>
+					<td>Seat</td>
+					<td>Company</td>
+					<td>Paid</td>
+					<td>Approved</td>
+				</tr>
+			<% @srsas_with.each do |my| %>
+				<tr id='<%= dom_id my %>'>
+					<td><%= my.ticket_num %></td>
+					<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
+					<td><% if my.paid == 'no' %>
+						<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => my.id}) %>
+						<% else %>
+						<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => my.id}) %>	
+						<% end %>
+					</td>
+					<% if my.approved == 'no' %>
+					 <td><%= link_to(image_tag('cross.png'), :action => 'approved', :id => my.id) %></td>
+					 <% else %>
+					 	<td><%= link_to(image_tag('check.png'), :action => 'disapproved', :id => my.id) %></td>
+					 <% end %>
+					 
+				</tr>
+			<% end %>
+			</table>
+		<% else %>
+			<table class="table table-striped">
+				<h4>My Reservation</h4>
+					<% if @my_srsas.empty? %>
+						<p>You have no reservation for this section</p>
+					<% else %>
+					<% @my_srsas.each do |my| %>
+						<tr>
+							<td><%= my.ticket_num %> - <%= my.company_name %></td>
+						</tr>
+					<% end %>
+					<% end %>
+			</table>
+		<% end %>
+	</div>
+
+	<div class="notes">
+		<p><%= @srsas_total %> approved <% if @srsas_total == 1 %>seat<% else %>seats<% end %>.</p>
+		<p><%= @srsas_pending %> pending <% if @srsas_pending == 1 %>seat<% else %>seats<% end %>.</p>
+	</div>
+
+
+
+</div><!-- container -->
+

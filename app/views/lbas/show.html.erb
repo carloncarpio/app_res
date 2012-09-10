@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ticket num:</b>
+  <%= @lba.ticket_num %>
+</p>
+
+<p>
+  <b>Company name:</b>
+  <%= @lba.company_name %>
+</p>
+
+<p>
+  <b>Company contact:</b>
+  <%= @lba.company_contact %>
+</p>
+
+<p>
+  <b>Company email:</b>
+  <%= @lba.company_email %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @lba.flag %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @lba.status %>
+</p>
+
+<p>
+  <b>Section:</b>
+  <%= @lba.section %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @lba.price %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @lba.approved %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%= @lba.paid %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @lba.user_id %>
+</p>
+
+<p>
+  <b>Main section:</b>
+  <%= @lba.main_section %>
+</p>
+
+
+<%= link_to 'Edit', edit_lba_path(@lba) %> |
+<%= link_to 'Back', lbas_path %>

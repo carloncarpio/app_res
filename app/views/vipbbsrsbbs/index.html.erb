@@ -18,7 +18,7 @@
     <th>Email</th>
     <th>Paid</th>
     <th>Approved</th>
-    <% if session[:username] == 'admin' %>
+    <% if session[:username] == 'superadmin' %>
         <th></th>
         <th></th>
         <th></th>
@@ -30,14 +30,19 @@
     <td><%= vipbbsrsbb.company_name %></td>
     <td><%= vipbbsrsbb.company_contact %></td>
     <td><%= vipbbsrsbb.company_email %></td>
-    <% if vipbbsrsbb.paid == 'no' && vipbbsrsbb.status == false %>
-        <td></td>
+    <% if vipbbsrsbb.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
     <% else %>
-        <td><%= vipbbsrsbb.paid %></td>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if vipbbsrsbb.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
     <% end %>
         
-    <td><%= vipbbsrsbb.approved %></td>
-    <% if session[:username] == 'admin' %>
+    <% if session[:username] == 'superadmin' %>
         <td><%= link_to 'Show', vipbbsrsbb %></td>
         <td><%= link_to 'Edit', edit_vipbbsrsbb_path(vipbbsrsbb) %></td>
         <td><%= link_to 'Destroy', vipbbsrsbb, confirm: 'Are you sure?', method: :delete, remote: true %></td>
@@ -61,6 +66,9 @@
       
         <%= f.label :section %>
         <%= f.text_field :section %>
+        <%= f.hidden_field :status, :value => false %>
+        <%= f.hidden_field :approved, :value => 'no' %>
+        <%= f.hidden_field :paid, :value => 'no' %>
       </div>
       
       <div class="actions">

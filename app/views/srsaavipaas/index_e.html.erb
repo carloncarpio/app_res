@@ -1,0 +1,56 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>SRS AA / VIP AA</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'Section A', {:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section B', {:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section C', {:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section D', {:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section E', {:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'superadmin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>
+  </tr>
+<% @srsaavipaas.each do |srsaavipaa| %>
+  <tr id='<%= dom_id srsaavipaa %>'>
+    <td><%= srsaavipaa.ticket_num %></td>
+    <td><%= srsaavipaa.company_name %></td>
+    <td><%= srsaavipaa.company_contact %></td>
+    <td><%= srsaavipaa.company_email %></td>
+     <% if srsaavipaa.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if srsaavipaa.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', srsaavipaa %></td>
+        <td><%= link_to 'Edit', edit_srsaavipaa_path(srsaavipaa) %></td>
+        <td><%= link_to 'Destroy', srsaavipaa, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Srsaavipaas', :action => 'visual'},:class => 'btn btn-primary' %>
+</div>

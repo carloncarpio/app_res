@@ -1,0 +1,79 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>SRS AA / VIP AA</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'Section A', {:controller => 'Srsaavipaas',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section B', {:controller => 'Srsaavipaas',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section C', {:controller => 'Srsaavipaas',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section D', {:controller => 'Srsaavipaas',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section E', {:controller => 'Srsaavipaas',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'superadmin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+<% @srsaavipaas.each do |srsaavipaa| %>
+  <tr id='<%= dom_id srsaavipaa %>'>
+    <td><%= srsaavipaa.ticket_num %></td>
+    <td><%= srsaavipaa.company_name %></td>
+    <td><%= srsaavipaa.company_contact %></td>
+    <td><%= srsaavipaa.company_email %></td>
+    <% if srsaavipaa.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if srsaavipaa.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', srsaavipaa %></td>
+        <td><%= link_to 'Edit', edit_srsaavipaa_path(srsaavipaa) %></td>
+        <td><%= link_to 'Destroy', srsaavipaa, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Srsaavipaas', :action => 'visual'},:class => 'btn btn-primary' %>
+
+<% if session[:username] == 'admin' %>
+    <%= form_for(Srsaavipaa.new) do |f| %>
+     
+      <div class="field">
+        <br /><br /><br />
+        <h4>Add Seats</h4><br />
+        <%= f.label :ticket_num %>
+        <%= f.text_field :ticket_num %>
+      
+        <%= f.label :section %>
+        <%= f.text_field :section %>
+        <%= f.hidden_field :status, :value => false %>
+        <%= f.hidden_field :approved, :value => 'no' %>
+        <%= f.hidden_field :paid, :value => 'no' %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit('Create Seat') %>
+      </div>
+    
+    <% end %>
+<% end %>
+</div>

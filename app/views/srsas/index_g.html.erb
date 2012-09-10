@@ -1,0 +1,65 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>SRS A</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'A', {:controller => 'Csas',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'B', {:controller => 'Csas',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'C', {:controller => 'Csas',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'D', {:controller => 'Csas',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'E', {:controller => 'Csas',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'F', {:controller => 'Csas',:action => 'index_f'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'G', {:controller => 'Csas',:action => 'index_g'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'H', {:controller => 'Csas',:action => 'index_h'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'I', {:controller => 'Csas',:action => 'index_i'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'J', {:controller => 'Csas',:action => 'index_j'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'superadmin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+<% @csas.each do |csa| %>
+  <tr id='<%= dom_id csa %>'>
+    <td><%= csa.ticket_num %></td>
+    <td><%= csa.company_name %></td>
+    <td><%= csa.company_contact %></td>
+    <td><%= csa.company_email %></td>
+    <% if csa.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if csa.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+        
+    
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', csa %></td>
+        <td><%= link_to 'Edit', edit_csa_path(csa) %></td>
+        <td><%= link_to 'Destroy', csa, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Csas', :action => 'visual'},:class => 'btn btn-primary' %>
+
+
+</div>

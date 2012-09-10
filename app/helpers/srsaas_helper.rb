@@ -1,0 +1,2 @@
+module SrsaasHelper
+end

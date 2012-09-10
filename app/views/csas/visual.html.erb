@@ -1,0 +1,236 @@
+<div class="container">
+	<div class="body_content">	
+	<h3>Section CS A </h3>
+
+	<table id="visual_csa" >
+		<tr>
+			<% @csas_a.each do |csa_a| %>
+				<% if csa_a.approved == 'yes' %>
+					<td class="<%= csa_a.status %>"><a><%= csa_a.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_a %>' class="<%= csa_a.status %>">
+					<% if csa_a.status == false %>
+					<%= link_to csa_a.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_a.id}, remote: true %></td>
+					<% elsif csa_a.status == true && session[:company_name] == csa_a.company_name %>
+					<%= link_to csa_a.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_a.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_a.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @csas_b.each do |csa_b| %>
+				<% if csa_b.approved == 'yes' %>
+					<td class="<%= csa_b.status %>"><a><%= csa_b.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_b %>' class="<%= csa_b.status %>">
+					<% if csa_b.status == false %>
+					<%= link_to csa_b.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_b.id}, remote: true %></td>
+					<% elsif csa_b.status == true && session[:company_name] == csa_b.company_name %>
+					<%= link_to csa_b.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_b.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_b.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @csas_c.each do |csa_c| %>
+				<% if csa_c.approved == 'yes' %>
+					<td class="<%= csa_c.status %>"><a><%= csa_c.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_c %>' class="<%= csa_c.status %>">
+					<% if csa_c.status == false %>
+					<%= link_to csa_c.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_c.id}, remote: true %></td>
+					<% elsif csa_c.status == true && session[:company_name] == csa_c.company_name %>
+					<%= link_to csa_c.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_c.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_c.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>	
+		</tr>
+
+		
+		<tr>
+			<% @csas_d.each do |csa_d| %>
+				<% if csa_d.approved == 'yes' %>
+					<td class="<%= csa_d.status %>"><a><%= csa_d.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_d %>' class="<%= csa_d.status %>">
+					<% if csa_d.status == false %>
+					<%= link_to csa_d.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_d.id}, remote: true %></td>
+					<% elsif csa_d.status == true && session[:company_name] == csa_d.company_name %>
+					<%= link_to csa_d.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_d.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_d.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @csas_e.each do |csa_e| %>
+				<% if csa_e.approved == 'yes' %>
+					<td class="<%= csa_e.status %>"><a><%= csa_e.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_e %>' class="<%= csa_e.status %>">
+					<% if csa_e.status == false %>
+					<%= link_to csa_e.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_e.id}, remote: true %></td>
+					<% elsif csa_e.status == true && session[:company_name] == csa_e.company_name %>
+					<%= link_to csa_e.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_e.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_e.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @csas_f.each do |csa_f| %>
+				<% if csa_f.approved == 'yes' %>
+					<td class="<%= csa_f.status %>"><a><%= csa_f.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_f %>' class="<%= csa_f.status %>">
+					<% if csa_f.status == false %>
+					<%= link_to csa_f.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_f.id}, remote: true %></td>
+					<% elsif csa_f.status == true && session[:company_name] == csa_f.company_name %>
+					<%= link_to csa_f.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_f.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_f.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @csas_g.each do |csa_g| %>
+				<% if csa_g.approved == 'yes' %>
+					<td class="<%= csa_g.status %>"><a><%= csa_g.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_g %>' class="<%= csa_g.status %>">
+					<% if csa_g.status == false %>
+					<%= link_to csa_g.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_g.id}, remote: true %></td>
+					<% elsif csa_g.status == true && session[:company_name] == csa_g.company_name %>
+					<%= link_to csa_g.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_g.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_g.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @csas_h.each do |csa_h| %>
+				<% if csa_h.approved == 'yes' %>
+					<td class="<%= csa_h.status %>"><a><%= csa_h.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_h %>' class="<%= csa_h.status %>">
+					<% if csa_h.status == false %>
+					<%= link_to csa_h.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_h.id}, remote: true %></td>
+					<% elsif csa_h.status == true && session[:company_name] == csa_h.company_name %>
+					<%= link_to csa_h.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_h.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_h.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @csas_i.each do |csa_i| %>
+				<% if csa_i.approved == 'yes' %>
+					<td class="<%= csa_i.status %>"><a><%= csa_i.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_i %>' class="<%= csa_i.status %>">
+					<% if csa_i.status == false %>
+					<%= link_to csa_i.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_i.id}, remote: true %></td>
+					<% elsif csa_i.status == true && session[:company_name] == csa_i.company_name %>
+					<%= link_to csa_i.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_i.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_i.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @csas_j.each do |csa_j| %>
+				<% if csa_j.approved == 'yes' %>
+					<td class="<%= csa_j.status %>"><a><%= csa_j.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id csa_j %>' class="<%= csa_j.status %>">
+					<% if csa_j.status == false %>
+					<%= link_to csa_j.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_j.id}, remote: true %></td>
+					<% elsif csa_j.status == true && session[:company_name] == csa_j.company_name %>
+					<%= link_to csa_j.ticket_num, {:controller => 'csas' ,:action => 'update_status', :id => csa_j.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to csa_j.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+		
+	</table>
+	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
+
+	</div><!-- body_content -->
+
+	<div id="my_reserve">
+		<% if session[:username] == 'admin' %>
+			<h3>Reservations for this Section</h3>
+			<table class="table table-striped">
+				<tr>
+					<td>Seat</td>
+					<td>Company</td>
+					<td>Paid</td>
+					<td>Approved</td>
+				</tr>
+			<% @csas_with.each do |my| %>
+				<tr id='<%= dom_id my %>'>
+					<td><%= my.ticket_num %></td>
+					<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
+					<td><% if my.paid == 'no' %>
+						<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => my.id}) %>
+						<% else %>
+						<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => my.id}) %>	
+						<% end %>
+					</td>
+					<% if my.approved == 'no' %>
+					 <td><%= link_to(image_tag('cross.png'), :action => 'approved', :id => my.id) %></td>
+					 <% else %>
+					 	<td><%= link_to(image_tag('check.png'), :action => 'disapproved', :id => my.id) %></td>
+					 <% end %>
+					 
+				</tr>
+			<% end %>
+			</table>
+		<% else %>
+			<table class="table table-striped">
+				<h4>My Reservation</h4>
+					<% if @my_csas.empty? %>
+						<p>You have no reservation for this section</p>
+					<% else %>
+					<% @my_csas.each do |my| %>
+						<tr>
+							<td><%= my.ticket_num %> - <%= my.company_name %></td>
+						</tr>
+					<% end %>
+					<% end %>
+			</table>
+		<% end %>
+	</div>
+
+	<div class="notes">
+		<p><%= @csas_total %> approved <% if @csas_total == 1 %>seat<% else %>seats<% end %>.</p>
+		<p><%= @csas_pending %> pending <% if @csas_pending == 1 %>seat<% else %>seats<% end %>.</p>
+	</div>
+
+
+
+</div><!-- container -->
+
