@@ -43,8 +43,8 @@ class AccessController < ApplicationController
     @vipbbsrsbbs_all = Vipbbsrsbb.all
     @vipbbsrsbbs = Vipbbsrsbb.where(:status => true)
 
-    @srsavipaas_all = Srsavipaa.all
-    @srsavipaas = Srsavipaa.where(:status => true)
+    @srsaavipaas_all  = Srsaavipaa.all
+    @srsaavipaas      = Srsaavipaa.where(:status => true)
 
     @srsaas_all = Srsaavipaa.all
     @srsaas = Srsaavipaa.where(:status => true)
