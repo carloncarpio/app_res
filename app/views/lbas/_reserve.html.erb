@@ -1,0 +1,18 @@
+<%= div_for my do %>
+<tr id='<%= dom_id my %>'>
+	<td><%= my.ticket_num %></td>
+	<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
+	<td><% if my.paid == 'no' %>
+		<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => my.id}) %>
+		<% else %>
+		<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => my.id}) %>	
+		<% end %>
+	</td>
+		<% if my.approved == 'no' %>
+		<td><%= link_to(image_tag('cross.png'), :action => 'approved', :id => my.id) %></td>
+		<% else %>
+		<td><%= link_to(image_tag('check.png'), :action => 'disapproved', :id => my.id) %></td>
+		<% end %>					 
+</tr>
+</div>
+	<% end %>	

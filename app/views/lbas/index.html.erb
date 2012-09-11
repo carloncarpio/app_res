@@ -14,6 +14,7 @@
     <li><%= link_to 'I', {:controller => 'Lbas',:action => 'index_i'}, :class => 'btn btn-danger' %></li>
 </ul>
 <br />
+<div id="test">
 <table class="table table-striped">
   <tr>
     <th>Ticket #</th>
@@ -55,7 +56,7 @@
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 <%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 <%= link_to 'View', {:controller => 'Lbas', :action => 'visual'},:class => 'btn btn-primary' %>

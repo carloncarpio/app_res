@@ -57,10 +57,11 @@ ul li{float: left;margin:0 10px 0 0;list-style-type: none;}
 
 .container{margin-bottom: 50px;}
 
-.seat_nav{//position:absolute;right: 0;top:0;float:right;margin-right: 420px;margin-top: 50px;}
+.seat_nav{//position:absolute;right: 0;top:0;float:right;margin-right: 50px;margin-top: 50px;}
 //.seat_nav ul {float:right;display:inline;}
 //.seat_nav ul li a{float:right;display: block;}
-
+.seat_nav a{font-size:14px;}
 .notes{border: 1px solid #ccc;border-radius: 4px;width: 20%;padding:10px;margin-top: 40px;}
 
 h4{margin:10px 0;}
+#table_01 a:hover{color:red;}

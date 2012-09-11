@@ -74,6 +74,7 @@ class LbasController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @lba.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
@@ -139,10 +140,10 @@ class LbasController < ApplicationController
            @lba.update_attribute :user_id, session[:id]
           #format.html { redirect_to @lbaaa, notice: 'lbbba was successfully updated.' }
           #format.json { head :no_content }
-          format.js 
+          format.js
         else
-          #format.html { render action: "edit" }
-          #format.json { render json: @lbaaa.errors, status: :unprocessable_entity }
+          format.html { render action: "edit" }
+          format.json { render json: @lbaaa.errors, status: :unprocessable_entity }
         end
       else
         if @lba.update_attribute :status, false

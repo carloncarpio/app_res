@@ -213,6 +213,10 @@
 		<p><%= @lbas_pending %> pending <% if @lbas_pending == 1 %>seat<% else %>seats<% end %>.</p>
 	</div>
 
+	<div id="lbas">
+		<%= link_to 'Submit Reservation', {:action => 'visual'} %>
+	</div>
+
 
 
 </div><!-- container -->

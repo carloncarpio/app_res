@@ -1,0 +1,18 @@
+<%= div_for lba do %>
+<tr id='<%= dom_id lba %>'>
+	<td><%= lba.ticket_num %></td>
+	<td><%= link_to(lba.company_name, :controller => 'company',:action => 'show_comp', :id => lba.user_id) %></td>
+	<td><% if lba.paid == 'no' %>
+		<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => lba.id}) %>
+		<% else %>
+		<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => lba.id}) %>	
+		<% end %>
+	</td>
+		<% if lba.approved == 'no' %>
+		<td><%= link_to(image_tag('cross.png'), :action => 'approved', :id => lba.id) %></td>
+		<% else %>
+		<td><%= link_to(image_tag('check.png'), :action => 'disapproved', :id => lba.id) %></td>
+		<% end %>					 
+</tr>
+</div>
+	<% end %>	

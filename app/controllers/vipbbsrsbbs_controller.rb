@@ -76,7 +76,8 @@ class VipbbsrsbbsController < ApplicationController
 
     respond_to do |format|
       if @vipbbsrsbb.update_attributes(params[:vipbbsrsbb])
-        format.html { redirect_to @vipbbsrsbb, notice: 'Vipbbsrsbb was successfully updated.' }
+        #format.html { redirect_to @vipbbsrsbb, notice: 'Vipbbsrsbb was successfully updated.' }
+        format.html { redirect_to :action => 'index' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
