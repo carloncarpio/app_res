@@ -19,7 +19,7 @@
     <th>Email</th>
     <th>Paid</th>
     <th>Approved</th>
-    <% if session[:username] == 'superadmin' %>
+    <% if session[:username] == 'admin' %>
         <th></th>
         <th></th>
         <th></th>
@@ -44,7 +44,7 @@
     <% end %>
         
     
-    <% if session[:username] == 'superadmin' %>
+    <% if session[:username] == 'admin' %>
         <td><%= link_to 'Show', srsa %></td>
         <td><%= link_to 'Edit', edit_srsa_path(srsa) %></td>
         <td><%= link_to 'Destroy', srsa, confirm: 'Are you sure?', method: :delete, remote: true %></td>

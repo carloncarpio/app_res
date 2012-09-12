@@ -70,8 +70,8 @@ class AccessController < ApplicationController
     @lbbs_all = Lbb.all
     @lbbs = Lbb.where(:status => true)
 
-    @lbcs_all = Lbb.all
-    @lbcs = Lbb.where(:status => true)
+    @lbcs_all = Lbc.all
+    @lbcs = Lbc.where(:status => true)
 
     @lbds_all = Lbd.all
     @lbds = Lbd.where(:status => true)
