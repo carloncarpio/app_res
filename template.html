@@ -1,25 +1,34 @@
 ticket_num:string company_name:string company_contact:string company_email:string flag:integer status:boolean section:string price:string approved:string paid:string user_id:integer main_section:string
 
-<ul>
-		<p><%= link_to('VIP-BB/SRS-BB',{:controller => 'Vipbbsrsbbs',:action => 'visual'}) %> - <b><u><%= @vipbbsrsbbs.size %></u></b> / <%= @vipbbsrsbbs_all.size - 4 %> total seats</p>
-		<p><%= link_to('SRS-AA/VIP-AA',{:controller => 'Srsaavipaas',:action => 'visual'}) %> - <b><u><%= @srsaavipaas.size %></u></b> / <%= @srsaavipaas_all.size %> total seats</p>
-		<p><%= link_to('SRS-AA',{:controller => 'Srsaas',:action => 'visual'}) %> - <b><u><%= @srsaas.size %></u></b> / <%= @srsaas_all.size %> total seats</p>
-		<p><%= link_to('CS-AA',{:controller => 'Csaas',:action => 'visual'}) %> - <b><u><%= @csaas.size %></u></b> / <%= @csaas_all.size %> total seats</p>
-		<p><%= link_to('CS-A',{:controller => 'Csas',:action => 'visual'}) %> - <b><u><%= @csas.size %></u></b> / <%= @csas_all.size %> total seats</p>
-		<p><%= link_to('SRS-A',{:controller => 'Srsas',:action => 'visual'}) %> - <b><u><%= @srsas.size %></u></b> / <%= @srsas_all.size %> total seats</p>
-		<p><%= link_to('VIP-A/SRS-A',{:controller => 'Vipasrsas',:action => 'visual'}) %> - <b><u><%= @vipasrsas.size %></u></b> / <%= @vipasrsas_all.size %> total seats</p>
-		<p><%= link_to('SRS-B/VIP-B',{:controller => 'Srsbvipbs',:action => 'visual'}) %> - <b><u><%= @srsbvipbs.size %></u></b> / <%= @srsbvipbs_all.size %> total seats</p>
-		<p><%= link_to('LB-DD',{:controller => 'Lbdds',:action => 'visual'}) %> - <b><u><%= @lbdds.size %></u></b> / <%= @lbdds_all.size %> total seats</p>
-		<p><%= link_to('LB-CC',{:controller => 'Lbccs',:action => 'visual'}) %> - <b><u><%= @lbccs.size %></u></b> / <%= @lbccs_all.size %> total seats</p>
-		<p><%= link_to('LB-BB',{:controller => 'Lbbbs',:action => 'visual'}) %> - <b><u><%= @lbbbs.size %></u></b> / <%= @lbbbs_all.size %> total seats</p>
-		<p><%= link_to('LB-AA',{:controller => 'Lbaas',:action => 'visual'}) %> - <b><u><%= @lbaas.size %></u></b> / <%= @lbaas_all.size %> total seats</p>
-		<p><%= link_to('LB-A',{:controller => 'Lbas',:action => 'visual'}) %> - <b><u><%= @lbas.size %></u></b> / <%= @lbas_all.size %> total seats</p>
-		<p><%= link_to('LB-B',{:controller => 'Lbbs',:action => 'visual'}) %> - <b><u><%= @lbbs.size %></u></b> / <%= @lbbs_all.size %> total seats</p>
-		<p><%= link_to('LB-C',{:controller => 'Lbcs',:action => 'visual'}) %> - <b><u><%= @lbcs.size %></u></b> / <%= @lbcs_all.size %> total seats</p>
-		<p><%= link_to('LB-D',{:controller => 'Lbds',:action => 'visual'}) %> - <b><u><%= @lbds.size %></u></b> / <%= @lbds_all.size %> total seats</p>
-	</ul>
+$(function(){
+     $("#<%= dom_id(@lba) %>").toggleClass('true'); 
+     location.reload();    
 
+});
 
+<% @lbbbs.each do |lbbb| %>
+  <tr id='<%= dom_id lbbb %>'>
+    <td><%= lbbb.ticket_num %></td>
+    <td><%= lbbb.company_name %></td>
+    <td><%= lbbb.company_contact %></td>
+    <td><%= lbbb.company_email %></td>
+    <% if lbbb.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
 
-
-		
+    <% if lbbb.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+        
+    
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', lbbb %></td>
+        <td><%= link_to 'Edit', edit_lbbb_path(lbbb) %></td>
+        <td><%= link_to 'Destroy', lbbb, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>

@@ -107,16 +107,16 @@ class LbbbsController < ApplicationController
   end
 
   def visual
-    @lbbbs_a = Lbbb.find_section('A').order("id")
-    @lbbbs_b = Lbbb.find_section('B').order("id")
-    @lbbbs_c = Lbbb.find_section('C').order("id")
-    @lbbbs_d = Lbbb.find_section('D').order("id")
-    @lbbbs_e = Lbbb.find_section('E').order("id")
-    @lbbbs_f = Lbbb.find_section('F').order("id")
-    @lbbbs_g = Lbbb.find_section('G').order("id")
-    @lbbbs_h = Lbbb.find_section('H').order("id")
-    @lbbbs_i = Lbbb.find_section('I').order("id")
-    @lbbbs_j = Lbbb.find_section('J').order("id")
+    @lbbbs_a = Lbbb.find_section('A').order("id DESC")
+    @lbbbs_b = Lbbb.find_section('B').order("id DESC")
+    @lbbbs_c = Lbbb.find_section('C').order("id DESC")
+    @lbbbs_d = Lbbb.find_section('D').order("id DESC")
+    @lbbbs_e = Lbbb.find_section('E').order("id DESC")
+    @lbbbs_f = Lbbb.find_section('F').order("id DESC")
+    @lbbbs_g = Lbbb.find_section('G').order("id DESC")
+    @lbbbs_h = Lbbb.find_section('H').order("id DESC")
+    @lbbbs_i = Lbbb.find_section('I').order("id DESC")
+    @lbbbs_j = Lbbb.find_section('J').order("id DESC")
 
     @lbbbs_with = Lbbb.where(:status => true)
     @lbbb = Lbbb.all

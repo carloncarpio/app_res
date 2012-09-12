@@ -108,15 +108,15 @@ class LbccsController < ApplicationController
   end
 
   def visual
-    @lbccs_a = Lbcc.find_section('A').order("id")
-    @lbccs_b = Lbcc.find_section('B').order("id")
-    @lbccs_c = Lbcc.find_section('C').order("id")
-    @lbccs_d = Lbcc.find_section('D').order("id")
-    @lbccs_e = Lbcc.find_section('E').order("id")
-    @lbccs_f = Lbcc.find_section('F').order("id")
-    @lbccs_g = Lbcc.find_section('G').order("id")
-    @lbccs_h = Lbcc.find_section('H').order("id")
-    @lbccs_i = Lbcc.find_section('I').order("id")
+    @lbccs_a = Lbcc.find_section('A').order("id DESC")
+    @lbccs_b = Lbcc.find_section('B').order("id DESC")
+    @lbccs_c = Lbcc.find_section('C').order("id DESC")
+    @lbccs_d = Lbcc.find_section('D').order("id DESC")
+    @lbccs_e = Lbcc.find_section('E').order("id DESC")
+    @lbccs_f = Lbcc.find_section('F').order("id DESC")
+    @lbccs_g = Lbcc.find_section('G').order("id DESC")
+    @lbccs_h = Lbcc.find_section('H').order("id DESC")
+    @lbccs_i = Lbcc.find_section('I').order("id DESC")
 
     @lbccs_with = Lbcc.where(:status => true)
     @lbccs = Lbcc.all

@@ -163,7 +163,7 @@
 
 	</div><!-- body_content -->
 
-	<div id="my_reserve">
+	<div id="my_reserve_02">
 		<% if session[:username] == 'admin' %>
 			<h3>Reservations for this Section</h3>
 			<table class="table table-striped">
@@ -213,11 +213,7 @@
 		<p><%= @lbas_pending %> pending <% if @lbas_pending == 1 %>seat<% else %>seats<% end %>.</p>
 	</div>
 
-	<div id="lbas">
-		<%= link_to 'Submit Reservation', {:action => 'visual'} %>
-	</div>
-
-
+	
 
 </div><!-- container -->
 

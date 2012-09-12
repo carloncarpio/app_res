@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="body_content">	
 	<h3>Section LB / CC</h3>
-
+	<br />
 	<table id="visual_lbcc">
 		<tr>
 			<% @lbccs_a.each do |lbcc_a| %>
@@ -146,7 +146,8 @@
 				<% end %>
 			<% end %>		
 		</tr>
-
+		</table>
+		<table id="visual_lbcc" style="margin-left:-46px;">
 		<tr>
 			<% @lbccs_i.each do |lbcc_i| %>
 				<% if lbcc_i.approved == 'yes' %>
@@ -166,7 +167,7 @@
 		</tr>
 
 	</table>
-
+	<br />
 	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
 

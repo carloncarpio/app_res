@@ -85,7 +85,7 @@ class SrsaasController < ApplicationController
 
     respond_to do |format|
       if @srsaa.update_attributes(params[:srsaa])
-        format.html { redirect_to @srsaa, notice: 'Srsaa was successfully updated.' }
+        format.html { redirect_to :action }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

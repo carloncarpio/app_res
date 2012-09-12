@@ -49,7 +49,7 @@ class LbasController < ApplicationController
   # GET /lbas/new.json
   def new
     @lba = Lba.new
-
+    @lbaa = Lbaa.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @lba }
@@ -65,7 +65,7 @@ class LbasController < ApplicationController
   # POST /lbas.json
   def create
     @lba = Lba.new(params[:lba])
-
+    @lbaA = Lbaa.new(params[:lbaa])
     respond_to do |format|
       if @lba.save
         format.html { redirect_to :action => 'index' }

@@ -1,77 +1,70 @@
 <div class="container">
 	<div class="body_content">	
-	<h3>Section LB / DD</h3>
-
-	<table id="visual_lbdd">
+	<h3>Section LB DD </h3>
+	<br />
+	<table id="visual_lbdd" >
 		<tr>
 			<% @lbdds_a.each do |lbdd_a| %>
 				<% if lbdd_a.approved == 'yes' %>
 					<td class="<%= lbdd_a.status %>"><a><%= lbdd_a.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_a %>' class="<%= lbdd_a.status %>">
 					<% if lbdd_a.status == false %>
-					<%= link_to lbdd_a.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_a.id}, remote: true %></td>
+					<%= link_to lbdd_a.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_a.id}, remote: true %></td>
 					<% elsif lbdd_a.status == true && session[:company_name] == lbdd_a.company_name %>
-					<%= link_to lbdd_a.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_a.id}, remote: true %></td>		
+					<%= link_to lbdd_a.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_a.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_a.ticket_num %>
-<<<<<<< HEAD
 					<% end %>
 				<% end %>
 			<% end %>		
 		</tr>
-		
+
 		<tr>
 			<% @lbdds_b.each do |lbdd_b| %>
 				<% if lbdd_b.approved == 'yes' %>
 					<td class="<%= lbdd_b.status %>"><a><%= lbdd_b.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_b %>' class="<%= lbdd_b.status %>">
 					<% if lbdd_b.status == false %>
-					<%= link_to lbdd_b.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_b.id}, remote: true %></td>
+					<%= link_to lbdd_b.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_b.id}, remote: true %></td>
 					<% elsif lbdd_b.status == true && session[:company_name] == lbdd_b.company_name %>
-					<%= link_to lbdd_b.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_b.id}, remote: true %></td>		
+					<%= link_to lbdd_b.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_b.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_b.ticket_num %>
-=======
->>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
 					<% end %>
 				<% end %>
 			<% end %>		
 		</tr>
-<<<<<<< HEAD
 
 		<tr>
 			<% @lbdds_c.each do |lbdd_c| %>
 				<% if lbdd_c.approved == 'yes' %>
 					<td class="<%= lbdd_c.status %>"><a><%= lbdd_c.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_c %>' class="<%= lbdd_c.status %>">
 					<% if lbdd_c.status == false %>
-					<%= link_to lbdd_c.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_c.id}, remote: true %></td>
+					<%= link_to lbdd_c.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_c.id}, remote: true %></td>
 					<% elsif lbdd_c.status == true && session[:company_name] == lbdd_c.company_name %>
-					<%= link_to lbdd_c.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_c.id}, remote: true %></td>		
+					<%= link_to lbdd_c.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_c.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_c.ticket_num %>
 					<% end %>
-				<% end %>
-			<% end %>		
+				<% end %>	
+			<% end %>	
 		</tr>
 
+		
 		<tr>
 			<% @lbdds_d.each do |lbdd_d| %>
 				<% if lbdd_d.approved == 'yes' %>
 					<td class="<%= lbdd_d.status %>"><a><%= lbdd_d.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_d %>' class="<%= lbdd_d.status %>">
 					<% if lbdd_d.status == false %>
-					<%= link_to lbdd_d.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_d.id}, remote: true %></td>
+					<%= link_to lbdd_d.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_d.id}, remote: true %></td>
 					<% elsif lbdd_d.status == true && session[:company_name] == lbdd_d.company_name %>
-					<%= link_to lbdd_d.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_d.id}, remote: true %></td>		
+					<%= link_to lbdd_d.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_d.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_d.ticket_num %>
 					<% end %>
@@ -83,97 +76,88 @@
 			<% @lbdds_e.each do |lbdd_e| %>
 				<% if lbdd_e.approved == 'yes' %>
 					<td class="<%= lbdd_e.status %>"><a><%= lbdd_e.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_e %>' class="<%= lbdd_e.status %>">
 					<% if lbdd_e.status == false %>
-					<%= link_to lbdd_e.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_e.id}, remote: true %></td>
+					<%= link_to lbdd_e.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_e.id}, remote: true %></td>
 					<% elsif lbdd_e.status == true && session[:company_name] == lbdd_e.company_name %>
-					<%= link_to lbdd_e.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_e.id}, remote: true %></td>		
+					<%= link_to lbdd_e.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_e.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_e.ticket_num %>
 					<% end %>
-				<% end %>
-			<% end %>		
+				<% end %>	
+			<% end %>
 		</tr>
 
 		<tr>
 			<% @lbdds_f.each do |lbdd_f| %>
 				<% if lbdd_f.approved == 'yes' %>
 					<td class="<%= lbdd_f.status %>"><a><%= lbdd_f.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_f %>' class="<%= lbdd_f.status %>">
 					<% if lbdd_f.status == false %>
-					<%= link_to lbdd_f.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_f.id}, remote: true %></td>
+					<%= link_to lbdd_f.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_f.id}, remote: true %></td>
 					<% elsif lbdd_f.status == true && session[:company_name] == lbdd_f.company_name %>
-					<%= link_to lbdd_f.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_f.id}, remote: true %></td>		
+					<%= link_to lbdd_f.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_f.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_f.ticket_num %>
 					<% end %>
-				<% end %>
-			<% end %>		
+				<% end %>	
+			<% end %>
 		</tr>
 
 		<tr>
 			<% @lbdds_g.each do |lbdd_g| %>
 				<% if lbdd_g.approved == 'yes' %>
 					<td class="<%= lbdd_g.status %>"><a><%= lbdd_g.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_g %>' class="<%= lbdd_g.status %>">
 					<% if lbdd_g.status == false %>
-					<%= link_to lbdd_g.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_g.id}, remote: true %></td>
+					<%= link_to lbdd_g.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_g.id}, remote: true %></td>
 					<% elsif lbdd_g.status == true && session[:company_name] == lbdd_g.company_name %>
-					<%= link_to lbdd_g.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_g.id}, remote: true %></td>		
+					<%= link_to lbdd_g.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_g.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_g.ticket_num %>
 					<% end %>
-				<% end %>
-			<% end %>		
+				<% end %>	
+			<% end %>
 		</tr>
 
 		<tr>
 			<% @lbdds_h.each do |lbdd_h| %>
 				<% if lbdd_h.approved == 'yes' %>
 					<td class="<%= lbdd_h.status %>"><a><%= lbdd_h.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_h %>' class="<%= lbdd_h.status %>">
 					<% if lbdd_h.status == false %>
-					<%= link_to lbdd_h.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_h.id}, remote: true %></td>
+					<%= link_to lbdd_h.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_h.id}, remote: true %></td>
 					<% elsif lbdd_h.status == true && session[:company_name] == lbdd_h.company_name %>
-					<%= link_to lbdd_h.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_h.id}, remote: true %></td>		
+					<%= link_to lbdd_h.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_h.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_h.ticket_num %>
 					<% end %>
-				<% end %>
-			<% end %>		
+				<% end %>	
+			<% end %>
 		</tr>
 
 		<tr>
 			<% @lbdds_i.each do |lbdd_i| %>
 				<% if lbdd_i.approved == 'yes' %>
 					<td class="<%= lbdd_i.status %>"><a><%= lbdd_i.ticket_num %></a></td>
-				
 				<% else %>
 				<td id='<%= dom_id lbdd_i %>' class="<%= lbdd_i.status %>">
 					<% if lbdd_i.status == false %>
-					<%= link_to lbdd_i.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_i.id}, remote: true %></td>
+					<%= link_to lbdd_i.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_i.id}, remote: true %></td>
 					<% elsif lbdd_i.status == true && session[:company_name] == lbdd_i.company_name %>
-					<%= link_to lbdd_i.ticket_num, {:controller => 'lbdds', :action => 'update_status', :id => lbdd_i.id}, remote: true %></td>		
+					<%= link_to lbdd_i.ticket_num, {:controller => 'lbdds' ,:action => 'update_status', :id => lbdd_i.id}, remote: true %></td>		
 					<% else %>
 						<%= link_to lbdd_i.ticket_num %>
 					<% end %>
-				<% end %>
-			<% end %>		
+				<% end %>	
+			<% end %>
 		</tr>
-
-=======
 		
->>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
-	</table>
-
+	</table><br />
 	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
 
@@ -193,13 +177,8 @@
 				<tr id='<%= dom_id my %>'>
 					<td><%= my.ticket_num %></td>
 					<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
-<<<<<<< HEAD
 					<td><% if my.paid == 'no' %>
 						<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => my.id}) %>
-=======
-					<td><% if my.paid == '' %>
-						<%= link_to('No') %>
->>>>>>> 34e1b9d3e75aebd7ac55e663ef9b9bdc14d117c3
 						<% else %>
 						<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => my.id}) %>	
 						<% end %>
@@ -209,6 +188,7 @@
 					 <% else %>
 					 	<td><%= link_to(image_tag('check.png'), :action => 'disapproved', :id => my.id) %></td>
 					 <% end %>
+					 
 				</tr>
 			<% end %>
 			</table>
@@ -232,6 +212,8 @@
 		<p><%= @lbdds_total %> approved <% if @lbdds_total == 1 %>seat<% else %>seats<% end %>.</p>
 		<p><%= @lbdds_pending %> pending <% if @lbdds_pending == 1 %>seat<% else %>seats<% end %>.</p>
 	</div>
+
+
 
 </div><!-- container -->
 
