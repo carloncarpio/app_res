@@ -33,6 +33,9 @@ class LbbbsController < ApplicationController
   def index_i
     @lbbbs = Lbbb.where(:section => 'I').order("id")
   end
+   def show_all
+    @lbbbs = Lbbb.all
+  end
 
   # GET /lbbbs/1
   # GET /lbbbs/1.json

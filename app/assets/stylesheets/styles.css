@@ -50,6 +50,8 @@ table a:hover{color:#000;}
 #my_reserve{position: absolute;right:0;top:100px;width:400px;}
 #my_reserve_01{position: absolute;right:0;top:300px;width:400px;}
 #my_reserve_02{position: absolute;right:0;top:400px;width:400px;}
+#my_reserve_03{position: absolute;right:0;top:300px;width:400px;}
+#my_reserve_04{position: absolute;right:0;top:100px;width:350px;}
 
 .nav-in{position: absolute;right:0;top:5px;}
 ul{position: absolute;}
@@ -65,3 +67,7 @@ ul li{float: left;margin:0 10px 0 0;list-style-type: none;}
 
 h4{margin:10px 0;}
 #table_01 a:hover{color:red;}
+
+.table_email{margin-bottom: 10px;}
+
+.lowerbox{position: absolute;right:150px;top: 150px;}

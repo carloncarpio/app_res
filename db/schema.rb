@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910061127) do
+ActiveRecord::Schema.define(:version => 20120914020420) do
 
   create_table "csaas", :force => true do |t|
     t.string   "ticket_num"
@@ -169,6 +169,23 @@ ActiveRecord::Schema.define(:version => 20120910061127) do
   add_index "lbdds", ["user_id"], :name => "index_lbdds_on_user_id"
 
   create_table "lbds", :force => true do |t|
+    t.string   "ticket_num"
+    t.string   "company_name"
+    t.string   "company_contact"
+    t.string   "company_email"
+    t.integer  "flag"
+    t.boolean  "status"
+    t.string   "section"
+    t.string   "price"
+    t.string   "approved"
+    t.string   "paid"
+    t.integer  "user_id"
+    t.string   "main_section"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "patrons", :force => true do |t|
     t.string   "ticket_num"
     t.string   "company_name"
     t.string   "company_contact"

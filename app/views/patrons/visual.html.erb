@@ -1,0 +1,407 @@
+<div class="container">
+	<div class="body_content">	
+	<h3>Section PATRON </h3>
+	<br />
+	<table id="visual_patron" style="width:500px;">
+		<tr>
+			<% @patrons_a.each do |patron_a| %>
+				<% if patron_a.approved == 'yes' %>
+					<td class="<%= patron_a.status %>"><a><%= patron_a.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_a %>' class="<%= patron_a.status %>">
+					<% if patron_a.status == false %>
+					<%= link_to patron_a.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_a.id}, remote: true %></td>
+					<% elsif patron_a.status == true && session[:company_name] == patron_a.company_name %>
+					<%= link_to patron_a.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_a.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_a.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @patrons_b.each do |patron_b| %>
+				<% if patron_b.approved == 'yes' %>
+					<td class="<%= patron_b.status %>"><a><%= patron_b.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_b %>' class="<%= patron_b.status %>">
+					<% if patron_b.status == false %>
+					<%= link_to patron_b.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_b.id}, remote: true %></td>
+					<% elsif patron_b.status == true && session[:company_name] == patron_b.company_name %>
+					<%= link_to patron_b.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_b.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_b.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @patrons_c.each do |patron_c| %>
+				<% if patron_c.approved == 'yes' %>
+					<td class="<%= patron_c.status %>"><a><%= patron_c.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_c %>' class="<%= patron_c.status %>">
+					<% if patron_c.status == false %>
+					<%= link_to patron_c.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_c.id}, remote: true %></td>
+					<% elsif patron_c.status == true && session[:company_name] == patron_c.company_name %>
+					<%= link_to patron_c.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_c.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_c.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>	
+		</tr>
+
+		
+		<tr>
+			<% @patrons_d.each do |patron_d| %>
+				<% if patron_d.approved == 'yes' %>
+					<td class="<%= patron_d.status %>"><a><%= patron_d.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_d %>' class="<%= patron_d.status %>">
+					<% if patron_d.status == false %>
+					<%= link_to patron_d.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_d.id}, remote: true %></td>
+					<% elsif patron_d.status == true && session[:company_name] == patron_d.company_name %>
+					<%= link_to patron_d.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_d.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_d.ticket_num %>
+					<% end %>
+				<% end %>
+			<% end %>		
+		</tr>
+
+		<tr>
+			<% @patrons_e.each do |patron_e| %>
+				<% if patron_e.approved == 'yes' %>
+					<td class="<%= patron_e.status %>"><a><%= patron_e.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_e %>' class="<%= patron_e.status %>">
+					<% if patron_e.status == false %>
+					<%= link_to patron_e.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_e.id}, remote: true %></td>
+					<% elsif patron_e.status == true && session[:company_name] == patron_e.company_name %>
+					<%= link_to patron_e.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_e.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_e.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @patrons_f.each do |patron_f| %>
+				<% if patron_f.approved == 'yes' %>
+					<td class="<%= patron_f.status %>"><a><%= patron_f.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_f %>' class="<%= patron_f.status %>">
+					<% if patron_f.status == false %>
+					<%= link_to patron_f.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_f.id}, remote: true %></td>
+					<% elsif patron_f.status == true && session[:company_name] == patron_f.company_name %>
+					<%= link_to patron_f.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_f.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_f.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @patrons_g.each do |patron_g| %>
+				<% if patron_g.approved == 'yes' %>
+					<td class="<%= patron_g.status %>"><a><%= patron_g.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_g %>' class="<%= patron_g.status %>">
+					<% if patron_g.status == false %>
+					<%= link_to patron_g.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_g.id}, remote: true %></td>
+					<% elsif patron_g.status == true && session[:company_name] == patron_g.company_name %>
+					<%= link_to patron_g.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_g.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_g.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @patrons_h.each do |patron_h| %>
+				<% if patron_h.approved == 'yes' %>
+					<td class="<%= patron_h.status %>"><a><%= patron_h.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_h %>' class="<%= patron_h.status %>">
+					<% if patron_h.status == false %>
+					<%= link_to patron_h.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_h.id}, remote: true %></td>
+					<% elsif patron_h.status == true && session[:company_name] == patron_h.company_name %>
+					<%= link_to patron_h.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_h.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_h.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+			<% @patrons_i.each do |patron_i| %>
+				<% if patron_i.approved == 'yes' %>
+					<td class="<%= patron_i.status %>"><a><%= patron_i.ticket_num %></a></td>
+				<% else %>
+				<td id='<%= dom_id patron_i %>' class="<%= patron_i.status %>">
+					<% if patron_i.status == false %>
+					<%= link_to patron_i.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_i.id}, remote: true %></td>
+					<% elsif patron_i.status == true && session[:company_name] == patron_i.company_name %>
+					<%= link_to patron_i.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_i.id}, remote: true %></td>		
+					<% else %>
+						<%= link_to patron_i.ticket_num %>
+					<% end %>
+				<% end %>	
+			<% end %>
+		</tr>
+
+		<tr>
+            <% @patrons_j.each do |patron_j| %>
+                <% if patron_j.approved == 'yes' %>
+                    <td class="<%= patron_j.status %>"><a><%= patron_j.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_j %>' class="<%= patron_j.status %>">
+                    <% if patron_j.status == false %>
+                    <%= link_to patron_j.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_j.id}, remote: true %></td>
+                    <% elsif patron_j.status == true && session[:company_name] == patron_j.company_name %>
+                    <%= link_to patron_j.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_j.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_j.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_k.each do |patron_k| %>
+                <% if patron_k.approved == 'yes' %>
+                    <td class="<%= patron_k.status %>"><a><%= patron_k.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_k %>' class="<%= patron_k.status %>">
+                    <% if patron_k.status == false %>
+                    <%= link_to patron_k.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_k.id}, remote: true %></td>
+                    <% elsif patron_k.status == true && session[:company_name] == patron_k.company_name %>
+                    <%= link_to patron_k.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_k.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_k.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_l.each do |patron_l| %>
+                <% if patron_l.approved == 'yes' %>
+                    <td class="<%= patron_l.status %>"><a><%= patron_l.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_l %>' class="<%= patron_l.status %>">
+                    <% if patron_l.status == false %>
+                    <%= link_to patron_l.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_l.id}, remote: true %></td>
+                    <% elsif patron_l.status == true && session[:company_name] == patron_l.company_name %>
+                    <%= link_to patron_l.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_l.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_l.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_m.each do |patron_m| %>
+                <% if patron_m.approved == 'yes' %>
+                    <td class="<%= patron_m.status %>"><a><%= patron_m.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_m %>' class="<%= patron_m.status %>">
+                    <% if patron_m.status == false %>
+                    <%= link_to patron_m.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_m.id}, remote: true %></td>
+                    <% elsif patron_m.status == true && session[:company_name] == patron_m.company_name %>
+                    <%= link_to patron_m.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_m.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_m.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_n.each do |patron_n| %>
+                <% if patron_n.approved == 'yes' %>
+                    <td class="<%= patron_n.status %>"><a><%= patron_n.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_n %>' class="<%= patron_n.status %>">
+                    <% if patron_n.status == false %>
+                    <%= link_to patron_n.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_n.id}, remote: true %></td>
+                    <% elsif patron_n.status == true && session[:company_name] == patron_n.company_name %>
+                    <%= link_to patron_n.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_n.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_n.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_o.each do |patron_o| %>
+                <% if patron_o.approved == 'yes' %>
+                    <td class="<%= patron_o.status %>"><a><%= patron_o.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_o %>' class="<%= patron_o.status %>">
+                    <% if patron_o.status == false %>
+                    <%= link_to patron_o.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_o.id}, remote: true %></td>
+                    <% elsif patron_o.status == true && session[:company_name] == patron_o.company_name %>
+                    <%= link_to patron_o.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_o.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_o.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_p.each do |patron_p| %>
+                <% if patron_p.approved == 'yes' %>
+                    <td class="<%= patron_p.status %>"><a><%= patron_p.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_p %>' class="<%= patron_p.status %>">
+                    <% if patron_p.status == false %>
+                    <%= link_to patron_p.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_p.id}, remote: true %></td>
+                    <% elsif patron_p.status == true && session[:company_name] == patron_p.company_name %>
+                    <%= link_to patron_p.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_p.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_p.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_q.each do |patron_q| %>
+                <% if patron_q.approved == 'yes' %>
+                    <td class="<%= patron_q.status %>"><a><%= patron_q.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_q %>' class="<%= patron_q.status %>">
+                    <% if patron_q.status == false %>
+                    <%= link_to patron_q.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_q.id}, remote: true %></td>
+                    <% elsif patron_q.status == true && session[:company_name] == patron_q.company_name %>
+                    <%= link_to patron_q.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_q.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_q.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_r.each do |patron_r| %>
+                <% if patron_r.approved == 'yes' %>
+                    <td class="<%= patron_r.status %>"><a><%= patron_r.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_r %>' class="<%= patron_r.status %>">
+                    <% if patron_r.status == false %>
+                    <%= link_to patron_r.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_r.id}, remote: true %></td>
+                    <% elsif patron_r.status == true && session[:company_name] == patron_r.company_name %>
+                    <%= link_to patron_r.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_r.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_r.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_s.each do |patron_s| %>
+                <% if patron_s.approved == 'yes' %>
+                    <td class="<%= patron_s.status %>"><a><%= patron_s.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_s %>' class="<%= patron_s.status %>">
+                    <% if patron_s.status == false %>
+                    <%= link_to patron_s.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_s.id}, remote: true %></td>
+                    <% elsif patron_s.status == true && session[:company_name] == patron_s.company_name %>
+                    <%= link_to patron_s.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_s.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_s.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+        <tr>
+            <% @patrons_t.each do |patron_t| %>
+                <% if patron_t.approved == 'yes' %>
+                    <td class="<%= patron_t.status %>"><a><%= patron_t.ticket_num %></a></td>
+                <% else %>
+                <td id='<%= dom_id patron_t %>' class="<%= patron_t.status %>">
+                    <% if patron_t.status == false %>
+                    <%= link_to patron_t.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_t.id}, remote: true %></td>
+                    <% elsif patron_t.status == true && session[:company_name] == patron_t.company_name %>
+                    <%= link_to patron_t.ticket_num, {:controller => 'patrons' ,:action => 'update_status', :id => patron_t.id}, remote: true %></td>       
+                    <% else %>
+                        <%= link_to patron_t.ticket_num %>
+                    <% end %>
+                <% end %>   
+            <% end %>
+        </tr>
+
+		
+	</table><br />
+	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
+
+	</div><!-- body_content -->
+
+	<div id="my_reserve_04">
+		<% if session[:username] == 'admin' %>
+			<h3>Reservations for this Section</h3>
+			<table class="table table-striped">
+				<tr>
+					<td>Seat</td>
+					<td>Company</td>
+					<td>Paid</td>
+					<td>Approved</td>
+				</tr>
+			<% @patrons_with.each do |my| %>
+				<tr id='<%= dom_id my %>'>
+					<td><%= my.ticket_num %></td>
+					<td><%= link_to(my.company_name, :controller => 'company',:action => 'show_comp', :id => my.user_id) %></td>
+					<td><% if my.paid == 'no' %>
+						<%= link_to( image_tag('cross.png') ,{:action => 'paid', :id => my.id}) %>
+						<% else %>
+						<%= link_to( image_tag('check.png') ,{:action => 'unpaid', :id => my.id}) %>	
+						<% end %>
+					</td>
+					<% if my.approved == 'no' %>
+					 <td><%= link_to(image_tag('cross.png'), :action => 'approved', :id => my.id) %></td>
+					 <% else %>
+					 	<td><%= link_to(image_tag('check.png'), :action => 'disapproved', :id => my.id) %></td>
+					 <% end %>
+					 
+				</tr>
+			<% end %>
+			</table>
+		<% else %>
+			<table class="table table-striped">
+				<h4>My Reservation</h4>
+					<% if @my_patrons.empty? %>
+						<p>You have no reservation for this section</p>
+					<% else %>
+					<% @my_patrons.each do |my| %>
+						<tr>
+							<td><%= my.ticket_num %> - <%= my.company_name %></td>
+						</tr>
+					<% end %>
+					<% end %>
+			</table>
+		<% end %>
+	</div>
+
+	<div class="notes">
+		<p><%= @patrons_total %> approved <% if @patrons_total == 1 %>seat<% else %>seats<% end %>.</p>
+		<p><%= @patrons_pending %> pending <% if @patrons_pending == 1 %>seat<% else %>seats<% end %>.</p>
+	</div>
+
+
+
+</div><!-- container -->
+

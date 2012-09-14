@@ -1,0 +1,75 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>PATRON</h1>
+<br />
+<ul class="nav-in"><br /><br />
+    <li><%= link_to 'A', {:controller => 'Patrons',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'B', {:controller => 'Patrons',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'C', {:controller => 'Patrons',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'D', {:controller => 'Patrons',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'E', {:controller => 'Patrons',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'F', {:controller => 'Patrons',:action => 'index_f'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'G', {:controller => 'Patrons',:action => 'index_g'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'H', {:controller => 'Patrons',:action => 'index_h'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'I', {:controller => 'Patrons',:action => 'index_i'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'J', {:controller => 'Patrons',:action => 'index_j'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'K', {:controller => 'Patrons',:action => 'index_k'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'L', {:controller => 'Patrons',:action => 'index_l'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'M', {:controller => 'Patrons',:action => 'index_m'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'N', {:controller => 'Patrons',:action => 'index_n'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'O', {:controller => 'Patrons',:action => 'index_o'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'P', {:controller => 'Patrons',:action => 'index_p'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Q', {:controller => 'Patrons',:action => 'index_q'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'R', {:controller => 'Patrons',:action => 'index_r'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'S', {:controller => 'Patrons',:action => 'index_s'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'T', {:controller => 'Patrons',:action => 'index_t'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'superadmin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+<% @patrons.each do |patron| %>
+  <tr id='<%= dom_id patron %>'>
+    <td><%= patron.ticket_num %></td>
+    <td><%= patron.company_name %></td>
+    <td><%= patron.company_contact %></td>
+    <td><%= patron.company_email %></td>
+    <% if patron.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if patron.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+        
+    
+    <% if session[:username] == 'superadmin' %>
+        <td><%= link_to 'Show', patron %></td>
+        <td><%= link_to 'Edit', edit_patron_path(patron) %></td>
+        <td><%= link_to 'Destroy', patron, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Patrons', :action => 'visual'},:class => 'btn btn-primary' %>
+
+
+</div>

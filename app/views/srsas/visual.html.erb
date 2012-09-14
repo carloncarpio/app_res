@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="body_content">	
 	<h3>Section SRS A </h3>
-
+	<br />
 	<table id="visual_srsa" >
 		<tr>
 			<% @srsas_a.each do |srsa_a| %>
@@ -172,15 +172,15 @@
 					<% end %>
 				<% end %>	
 			<% end %>
-		</tr>
-		
+		</tr>	
 	</table>
+	<br />
 	<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
 	<%= link_to 'Back To List', {:action => 'index'}, :class => 'btn btn-primary' %>
 
 	</div><!-- body_content -->
 
-	<div id="my_reserve">
+	<div id="my_reserve_03">
 		<% if session[:username] == 'admin' %>
 			<h3>Reservations for this Section</h3>
 			<table class="table table-striped">

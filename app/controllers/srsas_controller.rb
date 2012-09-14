@@ -24,6 +24,9 @@ class SrsasController < ApplicationController
   def index_f
     @srsas = Srsa.where(:section => 'F').order("id")
   end
+  def show_all
+    @srsas = Srsa.all
+  end
 
   # GET /srsas/1
   # GET /srsas/1.json

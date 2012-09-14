@@ -46,8 +46,8 @@ class AccessController < ApplicationController
     @srsaavipaas_all  = Srsaavipaa.all
     @srsaavipaas      = Srsaavipaa.where(:status => true)
 
-    @srsaas_all = Srsaavipaa.all
-    @srsaas = Srsaavipaa.where(:status => true)
+    @srsaas_all = Srsaa.all
+    @srsaas = Srsaa.where(:status => true)
 
     @srsas_all = Srsa.all
     @srsas = Srsa.where(:status => true)

@@ -1,0 +1,80 @@
+<br /><br /><br /><br />
+<div class="container">
+<h1>VIP BB / SRS BB</h1>
+<br />
+<ul class="nav-in">
+    <li><%= link_to 'Section A', {:controller => 'Vipbbsrsbbs',:action => 'index'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section B', {:controller => 'Vipbbsrsbbs',:action => 'index_b'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section C', {:controller => 'Vipbbsrsbbs',:action => 'index_c'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section D', {:controller => 'Vipbbsrsbbs',:action => 'index_d'}, :class => 'btn btn-danger' %></li>
+    <li><%= link_to 'Section E', {:controller => 'Vipbbsrsbbs',:action => 'index_e'}, :class => 'btn btn-danger' %></li>
+</ul>
+<br />
+<table class="table table-striped">
+  <tr>
+    <th>Ticket #</th>
+    <th>Company Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Paid</th>
+    <th>Approved</th>
+    <% if session[:username] == 'admin' %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end %>   
+  </tr>
+<% @vipbbsrsbbs.each do |vipbbsrsbb| %>
+  <tr id='<%= dom_id vipbbsrsbb %>'>
+    <td><%= vipbbsrsbb.ticket_num %></td>
+    <td><%= vipbbsrsbb.company_name %></td>
+    <td><%= vipbbsrsbb.company_contact %></td>
+    <td><%= vipbbsrsbb.company_email %></td>
+    <% if vipbbsrsbb.paid == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+
+    <% if vipbbsrsbb.approved == 'no' %>
+        <td><%= image_tag('cross.png') %></td>
+    <% else %>
+        <td><%= image_tag('check.png') %></td>
+    <% end %>
+        
+    <% if session[:username] == 'admin' %>
+        <td><%= link_to 'Show', vipbbsrsbb %></td>
+        <td><%= link_to 'Edit', edit_vipbbsrsbb_path(vipbbsrsbb) %></td>
+        <td><%= link_to 'Destroy', vipbbsrsbb, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Main Page', { :controller => 'access',:action => 'public' }, :class => 'btn btn-primary' %>
+<%= link_to 'View', {:controller => 'Vipbbsrsbbs', :action => 'visual'},:class => 'btn btn-primary' %>
+
+<% if session[:username] == 'admin' %>
+    <%= form_for(Vipbbsrsbb.new) do |f| %>
+     
+      <div class="field">
+        <br /><br /><br />
+        <h4>Add Seats</h4><br />
+        <%= f.label :ticket_num %>
+        <%= f.text_field :ticket_num %>
+      
+        <%= f.label :section %>
+        <%= f.text_field :section %>
+        <%= f.hidden_field :status, :value => false %>
+        <%= f.hidden_field :approved, :value => 'no' %>
+        <%= f.hidden_field :paid, :value => 'no' %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit('Create Seat') %>
+      </div>
+    
+    <% end %>
+<% end %>
+</div>

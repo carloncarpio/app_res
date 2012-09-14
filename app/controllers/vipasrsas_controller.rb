@@ -37,6 +37,9 @@ class VipasrsasController < ApplicationController
   def index_j
     @vipasrsas = Vipasrsa.where(:section => 'J').order("id")
   end
+  def show_all
+    @vipasrsas = Vipasrsa.all
+  end
 
   # GET /vipasrsas/1
   # GET /vipasrsas/1.json

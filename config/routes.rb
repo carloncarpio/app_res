@@ -1,4 +1,6 @@
 Reservation::Application.routes.draw do
+  resources :patrons
+
   resources :lbds
 
   resources :lbcs

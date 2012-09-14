@@ -36,6 +36,9 @@ class LbddsController < ApplicationController
   def index_i
     @lbdds = Lbdd.where(:section => 'I').order("id")
   end
+  def show_all
+    @lbdds = Lbdd.all
+  end
 
   # GET /lbdds/1
   # GET /lbdds/1.json

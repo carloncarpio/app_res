@@ -19,20 +19,238 @@
 </p>
 <hr />
 <div>
-	<p>Reservations - (<%= @reserves.size %>)</p>
-	<table class="table table-striped">
-	  <tr>
-	    <th>Ticket Number</th>
-	    <th>Section</th>
-	   
-	  </tr>
-	<% @reserves.each do |my| %>
-	  <tr>
-	    <td><%= my.ticket_num %></td>
-	    <td><%= my.main_section %></td>
-	  </tr>
-<% end %>
-</table>
+	<p>Reservations - (<%= @all %>)</p>
+
+	<div class="upperbox">
+
+	<% if @vipbbsrsbbs.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section VIP - BB / SRS - BB</th>
+		  </tr>
+		<% @vipbbsrsbbs.each do |my| %>
+		  <tr>
+		    <td><%= my.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @srsaavipaas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section SRS - AA / VIP - AA</th>	   
+		  </tr>
+		<% @srsaavipaas.each do |srsaavipaa| %>
+		  <tr>
+		    <td><%= srsaavipaa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @srsaas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section SRS - AA</th>	   
+		  </tr>
+		<% @srsaas.each do |srsaa| %>
+		  <tr>
+		    <td><%= srsaa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @csaas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section CS - AA</th>	   
+		  </tr>
+		<% @csaas.each do |csaa| %>
+		  <tr>
+		    <td><%= csaa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @csas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section CS - A</th>	   
+		  </tr>
+		<% @csas.each do |csa| %>
+		  <tr>
+		    <td><%= csa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @srsas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section SRS - A</th>	   
+		  </tr>
+		<% @srsas.each do |srsa| %>
+		  <tr>
+		    <td><%= srsa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @vipasrsas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section VIP - A / SRS - A</th>	   
+		  </tr>
+		<% @vipasrsas.each do |vipasrsa| %>
+		  <tr>
+		    <td><%= vipasrsa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @srsbvipbs.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section SRS - B / VIP - B</th>	   
+		  </tr>
+		<% @srsbvipbs.each do |srsbvipb| %>
+		  <tr>
+		    <td><%= srsbvipb.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+	</div>
+
+	<div class="lowerbox">
+
+	<% if @lbdds.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section LB - DD</th>	   
+		  </tr>
+		<% @lbdds.each do |lbdd| %>
+		  <tr>
+		    <td><%= lbdd.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>	
+
+	<% if @lbccs.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section LB - CC</th>	   
+		  </tr>
+		<% @lbccs.each do |lbcc| %>
+		  <tr>
+		    <td><%= lbcc.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @lbbbs.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section LB - BB</th>	   
+		  </tr>
+		<% @lbbbs.each do |lbbb| %>
+		  <tr>
+		    <td><%= lbbb.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @lbaas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section LB - AA</th>	   
+		  </tr>
+		<% @lbaas.each do |lbaa| %>
+		  <tr>
+		    <td><%= lbaa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @lbas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section LB - A</th>	   
+		  </tr>
+		<% @lbas.each do |lba| %>
+		  <tr>
+		    <td><%= lba.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @lbbs.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section LB - B</th>	   
+		  </tr>
+		<% @lbbs.each do |lbb| %>
+		  <tr>
+		    <td><%= lbb.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @lbcs.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section LB - C</th>	   
+		  </tr>
+		<% @lbcs.each do |lbc| %>
+		  <tr>
+		    <td><%= lbc.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
+	<% if @lbds.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section LB - D</th>	   
+		  </tr>
+		<% @lbds.each do |lbd| %>
+		  <tr>
+		    <td><%= lbd.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+	</div>
+
 </div>
 
 <%= link_to 'Submit Email', {:action => 'send_reserve', :id => @user.id}, :class => 'btn btn-primary' %>

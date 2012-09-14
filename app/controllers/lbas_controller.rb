@@ -33,6 +33,9 @@ class LbasController < ApplicationController
   def index_i
     @lbas = Lba.where(:section => 'I').order("id")
   end
+   def show_all
+    @lbas = Lba.all
+  end
 
   # GET /lbas/1
   # GET /lbas/1.json

@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ticket num:</b>
+  <%= @patron.ticket_num %>
+</p>
+
+<p>
+  <b>Company name:</b>
+  <%= @patron.company_name %>
+</p>
+
+<p>
+  <b>Company contact:</b>
+  <%= @patron.company_contact %>
+</p>
+
+<p>
+  <b>Company email:</b>
+  <%= @patron.company_email %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @patron.flag %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @patron.status %>
+</p>
+
+<p>
+  <b>Section:</b>
+  <%= @patron.section %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @patron.price %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @patron.approved %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%= @patron.paid %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @patron.user_id %>
+</p>
+
+<p>
+  <b>Main section:</b>
+  <%= @patron.main_section %>
+</p>
+
+
+<%= link_to 'Edit', edit_patron_path(@patron) %> |
+<%= link_to 'Back', patrons_path %>

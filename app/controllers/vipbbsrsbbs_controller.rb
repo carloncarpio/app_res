@@ -25,6 +25,10 @@ class VipbbsrsbbsController < ApplicationController
     #@vipbbsrsbbs = Vipbbsrsbb.all
   end
 
+  def show_all
+    @vipbbsrsbbs = Vipbbsrsbb.all
+  end
+
   # GET /vipbbsrsbbs/1
   # GET /vipbbsrsbbs/1.json
   def show
