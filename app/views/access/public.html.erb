@@ -4,6 +4,11 @@
 	<div class="seat_nav">
 		<table class="table table-striped" id="table_01">
 			<tr>
+				<td><%= link_to('PATRON',{:controller => 'Patrons',:action => 'visual'},) %></td>
+				<td style="width:50px;"></td>
+				<td><%= @patrons.size %> / <%= @patrons_all.size %> total seats</td>
+			</tr>
+			<tr>
 				<td><%= link_to('VIP-BB/SRS-BB',{:controller => 'Vipbbsrsbbs',:action => 'visual'},) %></td>
 				<td style="width:50px;"></td>
 				<td><%= @vipbbsrsbbs.size %> / <%= @vipbbsrsbbs_all.size %> total seats</td>

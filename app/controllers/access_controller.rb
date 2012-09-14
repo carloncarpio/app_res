@@ -88,6 +88,9 @@ class AccessController < ApplicationController
     @srsbvipbs_all = Srsbvipb.all
     @srsbvipbs = Srsbvipb.where(:status => true)
 
+    @patrons_all = Patron.all
+    @patrons = Patron.where(:status => true)
+
   end
 
   def admin
