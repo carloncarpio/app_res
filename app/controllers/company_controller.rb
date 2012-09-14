@@ -19,8 +19,9 @@ class CompanyController < ApplicationController
     @lbbs = Lbb.where(:company_name => @user.company_name)
     @lbcs = Lbc.where(:company_name => @user.company_name)
     @lbds = Lbd.where(:company_name => @user.company_name)
+    @patrons = Patron.where(:company_name => @user.company_name)
 
-    @all = @vipbbsrsbbs.size + @srsaavipaas.size + @srsaas.size + @csaas.size + @csas.size + @srsas.size + @vipasrsas.size + @srsbvipbs.size + @lbdds.size + @lbccs.size + @lbbbs.size + @lbaas.size + @lbas.size + @lbbs.size + @lbcs.size + @lbds.size
+    @all = @vipbbsrsbbs.size + @srsaavipaas.size + @srsaas.size + @csaas.size + @csas.size + @srsas.size + @vipasrsas.size + @srsbvipbs.size + @lbdds.size + @lbccs.size + @lbbbs.size + @lbaas.size + @lbas.size + @lbbs.size + @lbcs.size + @lbds.size + @patrons.size
 
     respond_to do |format|
       format.html # show.html.erb

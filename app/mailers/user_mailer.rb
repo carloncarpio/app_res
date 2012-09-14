@@ -30,6 +30,7 @@ class UserMailer < ActionMailer::Base
     @srsas = Srsa.where(:company_name => company_name)
     @vipasrsas = Vipasrsa.where(:company_name => company_name)
     @srsbvipbs = Srsbvipb.where(:company_name => company_name)
+    @patrons = Patron.where(:company_name => company_name)
 
     @lbdds = Lbdd.where(:company_name => company_name)
     @lbccs = Lbcc.where(:company_name => company_name)

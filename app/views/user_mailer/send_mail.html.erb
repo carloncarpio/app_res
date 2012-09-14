@@ -4,96 +4,139 @@
 
 <div class="upperbox">
 
-	<table class="table_email">
-	  <tr>
-	    <th>Section VIP - BB / SRS - BB</th>
-	  </tr>
-	<% @vipbbsrsbbs.each do |my| %>
-	  <tr>
-	    <td><%= my.ticket_num %></td>
-	  </tr>
+	<% if @vipbbsrsbbs.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section VIP - BB / SRS - BB</th>
+		  </tr>
+		<% @vipbbsrsbbs.each do |my| %>
+		  <tr>
+		    <td><%= my.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
 	<% end %>
-	</table>
 
-	<table class="table_email">
-	  <tr>
-	    <th>Section SRS - AA / VIP - AA</th>	   
-	  </tr>
-	<% @srsaavipaas.each do |srsaavipaa| %>
-	  <tr>
-	    <td><%= srsaavipaa.ticket_num %></td>
-	  </tr>
+	<% if @srsaavipaas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section SRS - AA / VIP - AA</th>	   
+		  </tr>
+		<% @srsaavipaas.each do |srsaavipaa| %>
+		  <tr>
+		    <td><%= srsaavipaa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
 	<% end %>
-	</table>
 
-	<table class="table_email">
-	  <tr>
-	    <th>Section SRS - AA</th>	   
-	  </tr>
-	<% @srsaas.each do |srsaa| %>
-	  <tr>
-	    <td><%= srsaa.ticket_num %></td>
-	  </tr>
+	<% if @srsaas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section SRS - AA</th>	   
+		  </tr>
+		<% @srsaas.each do |srsaa| %>
+		  <tr>
+		    <td><%= srsaa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
 	<% end %>
-	</table>
 
-	<table class="table_email">
-	  <tr>
-	    <th>Section CS - AA</th>	   
-	  </tr>
-	<% @csaas.each do |csaa| %>
-	  <tr>
-	    <td><%= csaa.ticket_num %></td>
-	  </tr>
+	<% if @csaas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section CS - AA</th>	   
+		  </tr>
+		<% @csaas.each do |csaa| %>
+		  <tr>
+		    <td><%= csaa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
 	<% end %>
-	</table>
 
-	<table class="table_email">
-	  <tr>
-	    <th>Section CS - A</th>	   
-	  </tr>
-	<% @csas.each do |csa| %>
-	  <tr>
-	    <td><%= csa.ticket_num %></td>
-	  </tr>
+	<% if @csas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section CS - A</th>	   
+		  </tr>
+		<% @csas.each do |csa| %>
+		  <tr>
+		    <td><%= csa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
 	<% end %>
-	</table>
 
-	<table class="table_email">
-	  <tr>
-	    <th>Section SRS - A</th>	   
-	  </tr>
-	<% @srsas.each do |srsa| %>
-	  <tr>
-	    <td><%= srsa.ticket_num %></td>
-	  </tr>
+	<% if @srsas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section SRS - A</th>	   
+		  </tr>
+		<% @srsas.each do |srsa| %>
+		  <tr>
+		    <td><%= srsa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
 	<% end %>
-	</table>
 
-	<table class="table_email">
-	  <tr>
-	    <th>Section VIP - A / SRS - A</th>	   
-	  </tr>
-	<% @vipasrsas.each do |vipasrsa| %>
-	  <tr>
-	    <td><%= vipasrsa.ticket_num %></td>
-	  </tr>
+	<% if @vipasrsas.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section VIP - A / SRS - A</th>	   
+		  </tr>
+		<% @vipasrsas.each do |vipasrsa| %>
+		  <tr>
+		    <td><%= vipasrsa.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
 	<% end %>
-	</table>
 
-	<table class="table_email">
-	  <tr>
-	    <th>Section SRS - B / VIP - B</th>	   
-	  </tr>
-	<% @srsbvipbs.each do |srsbvipb| %>
-	  <tr>
-	    <td><%= srsbvipb.ticket_num %></td>
-	  </tr>
+	<% if @srsbvipbs.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section SRS - B / VIP - B</th>	   
+		  </tr>
+		<% @srsbvipbs.each do |srsbvipb| %>
+		  <tr>
+		    <td><%= srsbvipb.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
 	<% end %>
-	</table>
+
+
+	<% if @patrons.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section PATRON</th>	   
+		  </tr>
+		<% @patrons.each do |patron| %>
+		  <tr>
+		    <td><%= patron.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
 	</div>
 
 	<div class="lowerbox">
+
+	<% if @lbdds.empty? %>
+	<% else %>
 		<table class="table_email">
 		  <tr>
 		    <th>Section LB - DD</th>	   
@@ -103,8 +146,11 @@
 		    <td><%= lbdd.ticket_num %></td>
 		  </tr>
 		<% end %>
-		</table>	
+		</table>
+	<% end %>	
 
+	<% if @lbccs.empty? %>
+	<% else %>
 		<table class="table_email">
 		  <tr>
 		    <th>Section LB - CC</th>	   
@@ -115,7 +161,10 @@
 		  </tr>
 		<% end %>
 		</table>
+	<% end %>
 
+	<% if @lbbbs.empty? %>
+	<% else %>
 		<table class="table_email">
 		  <tr>
 		    <th>Section LB - BB</th>	   
@@ -126,7 +175,10 @@
 		  </tr>
 		<% end %>
 		</table>
+	<% end %>
 
+	<% if @lbaas.empty? %>
+	<% else %>
 		<table class="table_email">
 		  <tr>
 		    <th>Section LB - AA</th>	   
@@ -136,8 +188,11 @@
 		    <td><%= lbaa.ticket_num %></td>
 		  </tr>
 		<% end %>
-		</table>	
+		</table>
+	<% end %>
 
+	<% if @lbas.empty? %>
+	<% else %>
 		<table class="table_email">
 		  <tr>
 		    <th>Section LB - A</th>	   
@@ -148,7 +203,10 @@
 		  </tr>
 		<% end %>
 		</table>
+	<% end %>
 
+	<% if @lbbs.empty? %>
+	<% else %>
 		<table class="table_email">
 		  <tr>
 		    <th>Section LB - B</th>	   
@@ -159,7 +217,10 @@
 		  </tr>
 		<% end %>
 		</table>
+	<% end %>
 
+	<% if @lbcs.empty? %>
+	<% else %>
 		<table class="table_email">
 		  <tr>
 		    <th>Section LB - C</th>	   
@@ -170,7 +231,10 @@
 		  </tr>
 		<% end %>
 		</table>
+	<% end %>
 
+	<% if @lbds.empty? %>
+	<% else %>
 		<table class="table_email">
 		  <tr>
 		    <th>Section LB - D</th>	   
@@ -181,7 +245,12 @@
 		  </tr>
 		<% end %>
 		</table>
+	<% end %>
 
+
+	</div>
+
+	</div>
 	</div>
 
 

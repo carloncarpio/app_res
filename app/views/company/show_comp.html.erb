@@ -134,6 +134,22 @@
 		<% end %>
 		</table>
 	<% end %>
+
+
+	<% if @patrons.empty? %>
+	<% else %>
+		<table class="table_email">
+		  <tr>
+		    <th>Section PATRON</th>	   
+		  </tr>
+		<% @patrons.each do |patron| %>
+		  <tr>
+		    <td><%= patron.ticket_num %></td>
+		  </tr>
+		<% end %>
+		</table>
+	<% end %>
+
 	</div>
 
 	<div class="lowerbox">
@@ -249,10 +265,17 @@
 		<% end %>
 		</table>
 	<% end %>
+
+
 	</div>
 
-</div>
+	</div>
+
+	
+
+
 
 <%= link_to 'Submit Email', {:action => 'send_reserve', :id => @user.id}, :class => 'btn btn-primary' %>
 <%= link_to 'Back', :back, :class => 'btn btn-primary' %>
+</div>
 </div>
