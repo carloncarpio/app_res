@@ -168,7 +168,7 @@ class PatronsController < ApplicationController
 
     @patrons_with = Patron.where(:status => true)
     @patron = Patron.all
-    @my_patron = Patron.find_reserve(session[:company_name]).order("id")
+    @my_patrons = Patron.find_reserve(session[:company_name]).order("id")
 
     @patrons_total = Patron.total_approved('yes').size
     @patrons_pending = Patron.total_pending('no',true).size
