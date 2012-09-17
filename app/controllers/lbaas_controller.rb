@@ -1,4 +1,6 @@
 class LbaasController < ApplicationController
+
+  before_filter :confirm_logged_in
   # GET /lbaas
   # GET /lbaas.json
   def index

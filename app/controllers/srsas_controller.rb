@@ -1,4 +1,5 @@
 class SrsasController < ApplicationController
+  before_filter :confirm_logged_in
   # GET /srsas
   # GET /srsas.json
   def index

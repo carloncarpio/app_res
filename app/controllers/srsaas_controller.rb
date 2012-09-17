@@ -1,4 +1,5 @@
 class SrsaasController < ApplicationController
+  before_filter :confirm_logged_in
   # GET /srsaas
   # GET /srsaas.json
   def index

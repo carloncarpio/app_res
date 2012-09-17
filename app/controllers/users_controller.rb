@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  #before_filter :confirm_logged_in
   # GET /users
   # GET /users.json
   def index

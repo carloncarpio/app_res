@@ -1,4 +1,5 @@
 class PatronsController < ApplicationController
+  before_filter :confirm_logged_in
   # GET /patrons
   # GET /patrons.json
   def index

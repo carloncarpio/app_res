@@ -1,4 +1,5 @@
 class VipasrsasController < ApplicationController
+  before_filter :confirm_logged_in
   # GET /vipasrsas
   # GET /vipasrsas.json
   def index

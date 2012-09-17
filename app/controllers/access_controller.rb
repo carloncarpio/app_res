@@ -1,5 +1,7 @@
 class AccessController < ApplicationController
 
+  #before_filter :confirm_logged_in, :except => [:login, :logout]
+
   def index
   	login
   	render('login')

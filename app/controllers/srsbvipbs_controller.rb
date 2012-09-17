@@ -1,4 +1,5 @@
 class SrsbvipbsController < ApplicationController
+  before_filter :confirm_logged_in
   # GET /srsbvipbs
   # GET /srsbvipbs.json
   def index

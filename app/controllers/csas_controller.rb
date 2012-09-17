@@ -1,4 +1,6 @@
 class CsasController < ApplicationController
+
+  before_filter :confirm_logged_in
   # GET /csas
   # GET /csas.json
   def index

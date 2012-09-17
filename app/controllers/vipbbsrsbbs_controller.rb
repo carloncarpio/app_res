@@ -1,4 +1,5 @@
 class VipbbsrsbbsController < ApplicationController
+  before_filter :confirm_logged_in
   # GET /vipbbsrsbbs
   # GET /vipbbsrsbbs.json
   def index

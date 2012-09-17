@@ -1,5 +1,7 @@
 class CompanyController < ApplicationController
 
+  before_filter :confirm_logged_in
+
   def show_comp
     @user = User.find(params[:id])
     @vipbbsrsbbs = Vipbbsrsbb.where(:company_name => @user.company_name)

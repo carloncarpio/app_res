@@ -1,4 +1,6 @@
 class LbddsController < ApplicationController
+
+  before_filter :confirm_logged_in
   # GET /lbdds
   # GET /lbdds.json
   def index
