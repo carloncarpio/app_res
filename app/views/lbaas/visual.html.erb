@@ -198,11 +198,28 @@
 					<% if @my_lbaas.empty? %>
 						<p>You have no reservation for this section</p>
 					<% else %>
+					<tr>
+						<td>Seat</td>
+						<td>Company</td>
+						<td>Paid</td>
+						<td>Approved</td>
+					</tr>
 					<% @my_lbaas.each do |my| %>
 						<tr>
-							<td><%= my.ticket_num %> - <%= my.company_name %></td>
-						</tr>
-					<% end %>
+							<td><%= my.ticket_num %></td>
+							<td><%= my.company_name %></td>
+							<% if my.paid == 'no' %>
+								<td><%= image_tag('cross.png') %></td>
+							<% else %>
+								<td><%= image_tag('check.png') %></td>
+							<% end %>
+							<% if my.approved == 'no' %>
+							 <td><%= image_tag('cross.png') %></td>
+							 <% else %>
+							 	<td><%= image_tag('check.png') %></td>
+							 <% end %>
+								</tr>
+							<% end %>
 					<% end %>
 			</table>
 		<% end %>

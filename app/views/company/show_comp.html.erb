@@ -274,8 +274,9 @@
 	
 
 
-
-<%= link_to 'Submit Email', {:action => 'send_reserve', :id => @user.id}, :class => 'btn btn-primary' %>
+<% if session[:username] == 'admin' %>
+	<%= link_to 'Submit Email', {:action => 'send_reserve', :id => @user.id}, :class => 'btn btn-primary' %>
+<% end %>
 <%= link_to 'Back', :back, :class => 'btn btn-primary' %>
 </div>
 </div>
