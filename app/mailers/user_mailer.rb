@@ -41,9 +41,10 @@ class UserMailer < ActionMailer::Base
     @lbcs = Lbc.where(:company_name => company_name)
     @lbds = Lbd.where(:company_name => company_name)
 
-    @all = @vipbbsrsbb.size + @srsaavipaas.size + @srsaas.size + @csaas.size + @csas.size + @srsas.size + @vipasrsas.size + @srsbvipbs.size + @lbdds.size + @lbccs.size + @lbbbs.size + @lbaas.size + @lbas.size + @lbbs.size + @lbcs.size + @lbds.size
+    #@all = @vipbbsrsbb.size + @srsaavipaas.size + @srsaas.size + @csaas.size + @csas.size + @srsas.size + @vipasrsas.size + @srsbvipbs.size + @lbdds.size + @lbccs.size + @lbbbs.size + @lbaas.size + @lbas.size + @lbbs.size + @lbcs.size + @lbds.size
+    @all = @vipbbsrsbbs.size + @srsaavipaas.size + @srsaas.size + @csaas.size + @csas.size + @srsas.size + @vipasrsas.size + @srsbvipbs.size + @lbdds.size + @lbccs.size + @lbbbs.size + @lbaas.size + @lbas.size + @lbbs.size + @lbcs.size + @lbds.size + @patrons.size
 
-    mail(:to => @company_email, :subject => 'Test')
+    mail(:to => @company_email, :subject => 'Reserve Seats')
   end
 
   def send_reserves(email,company_name)

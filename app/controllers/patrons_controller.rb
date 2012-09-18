@@ -167,7 +167,7 @@ class PatronsController < ApplicationController
     @patrons_s = Patron.find_section('S').order("id ")
     @patrons_t = Patron.find_section('T').order("id ")
 
-    @patrons_with = Patron.where(:status => true)
+    @patrons_with = Patron.where(:status => true).order("ticket_num ASC")
     @patron = Patron.all
     @my_patrons = Patron.find_reserve(session[:company_name]).order("id")
 
