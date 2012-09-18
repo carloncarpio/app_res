@@ -2,6 +2,9 @@
 <div class="container1">
 <%= image_tag('seatmap.jpg') %>
 	<div class="seat_nav">
+
+		<div style="padding:5px; border:1px solid #ccc;border-radius:3px;"><p>To finalize your reservations click:<%= link_to 'My Reservations', {:controller => 'company', :action => 'show_comp', :id => session[:id]} %><br/>  and notify us of your reservations.</p></div>
+
 		<table class="table table-striped" id="table_01">
 			<tr>
 				<td><%= link_to('PATRON',{:controller => 'Patrons',:action => 'visual'},) %></td>

@@ -2,6 +2,7 @@
 	<div class="body_content">	
 	<h3>Section VIP BB / SRS BB</h3>
 	<br />
+	<div style="padding:5px; border:1px solid #ccc;border-radius:3px;width:350px;"><p>To finalize your reservations click:<%= link_to 'My Reservations', {:controller => 'company', :action => 'show_comp', :id => session[:id]} %><br/>  and notify us of your reservations.</p></div>
 	<table id="visual_vipbbsrsbb" style="width:415px;">
 		<tr>
 			<% @vipbbsrsbbs_a.each do |vipbbsrsbb_a| %>

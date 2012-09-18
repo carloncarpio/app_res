@@ -276,6 +276,8 @@
 
 <% if session[:username] == 'admin' %>
 	<%= link_to 'Submit Email', {:action => 'send_reserve', :id => @user.id}, :class => 'btn btn-primary' %>
+<% else %>
+	<%= link_to 'Submit Reservations', {:action => 'submit_res', :id => @user.id}, :class => 'btn btn-primary' %>
 <% end %>
 <%= link_to 'Back', :back, :class => 'btn btn-primary' %>
 </div>
