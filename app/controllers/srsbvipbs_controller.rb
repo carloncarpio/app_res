@@ -112,7 +112,7 @@ class SrsbvipbsController < ApplicationController
 
     @srsbvipbs_with = Srsbvipb.where(:status => true)
     @srsbvipb = Srsbvipb.all
-    @my_srsbvipb = Srsbvipb.find_reserve(session[:company_name]).order("id")
+    @my_srsbvipbs = Srsbvipb.find_reserve(session[:company_name]).order("id")
 
     @srsbvipbs_total = Srsbvipb.total_approved('yes').size
     @srsbvipbs_pending = Srsbvipb.total_pending('no',true).size
